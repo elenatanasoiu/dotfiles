@@ -1,3 +1,4 @@
+# paste this into your project's .git/hooks/pre-commit file
 require 'rubocop'
 
 changed_files = `git status --porcelain`.split(/\n/).
