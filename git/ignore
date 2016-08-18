@@ -1,26 +1,97 @@
-.DS_Store
-*.sw[nop]
+# Ignore bundler config
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Rails
 .bundle
-.byebug_history
-.env
-.idea
-.rakeTasks
-.generators
 db/*.sqlite3
-log/*.log
-rerun.txt
-tags
-!tags/
+db/*.sqlite3-journal
+*.log
+tmp
 tmp/**/*
-!tmp/cache/.keep
-*.iml
-*.pyc
-vim/bundles/
-vim/.netrwhist
-.env
-node_modules
+
+# Documentation
+.yardoc
+.yardopts
 coverage
-.buildpath
-.rake_tasks
-workbench.xmi
-.powrc
+
+# Public Uploads
+public/system/*
+public/themes/*
+public/test_files
+
+# Public assets
+public/assets
+
+# Public Cache
+public/javascripts/cache
+public/stylesheets/cache
+
+# Vendor Cache
+vendor/cache
+
+# Acts as Indexed
+index/**/*
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# NetBeans
+nbproject
+
+# Eclipse
+.project
+
+# Redcar
+.redcar
+
+# Rubinius
+*.rbc
+
+# Vim
+*.swp
+*.swo
+
+# RubyMine
+.idea
+
+# E-texteditor
+.eprj
+
+# Backup
+*~
+
+# Capybara Bug
+capybara-*html
+
+# sass
+.sass-cache
+.sass-cache/*
+
+#rvm
+.rvmrc
+.rvmrc.*
+
+# vendor/extensions dummy applications.
+vendor/extensions/**/spec/dummy
+
+# node
+node_modules
+
+# bower components
+/vendor/assets/bower_components
+
+# Env files
+.env
+
+# Rspec
+spec/test_files
