@@ -1,0 +1,71 @@
+# ~/.tmuxinator/SP.yml
+
+name: SP
+root: ~/Work/projects
+pre-window: cd ~/Work/projects
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t SP
+
+windows:
+  - api:
+      layout: 8751,278x73,0,0{162x73,0,0[162x37,0,0,0,162x35,0,38,9],115x73,163,0[115x37,163,0,4,115x35,163,38,5]}
+      root: ~/Work/projects/api
+      panes:
+        - tail -f development.log
+        - clear
+        - (kill -9 $(lsof -ti tcp:3004 || true) || true) && rails s -p 3004 -b 127.0.0.1
+        - rails c
+  - smartpension:
+      layout: 8751,278x73,0,0{162x73,0,0[162x37,0,0,0,162x35,0,38,9],115x73,163,0[115x37,163,0,4,115x35,163,38,5]}
+      root: ~/Work/projects/smartpension
+      panes: 
+        - clear
+        - clear
+        - kill -9 $(lsof -ti tcp:3000) && rails s
+        - rails c	
+  - spanner:
+      layout: even-horizontal
+      root: ~/Work/projects/spanner
+      panes: 
+        - clear
+        - clear
+  - adviser:
+      layout: even-horizontal
+      root: ~/Work/projects/adviser
+      panes:
+        - clear
+        - ember s
+  - employees:
+     layout: even-horizontal
+     root: ~/Work/projects/employee
+     panes: 
+       - clear 
+       - ember s -p 3007
+  - dotfiles:
+     layout: even-horizontal 
+     root: ~/Work/projects/dotfiles
+     panes:
+       - clear
+       - clear
