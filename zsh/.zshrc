@@ -101,6 +101,10 @@ alias gbd='git branch -d'
 alias gbD='git branch -D'
 alias gco='git checkout'
 alias rspec='bundle exec rspec'
+alias rubo='rubocop -c ~/.rubocop.yml -a'
+alias es='ember s'
+alias ess='ember s -p 3007'
+alias uncommit='git reset --soft HEAD~1'
 
 # Tmuxinator settings
 export EDITOR='vi'
