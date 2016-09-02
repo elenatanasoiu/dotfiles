@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(rails ruby rbenv git)
+plugins=(rails ruby rbenv git history-substring-search zsh-syntax-highlighting)
 
 # User configuration
 
@@ -105,9 +105,25 @@ alias rubo='rubocop -c ~/.rubocop.yml -a'
 alias es='ember s'
 alias ess='ember s -p 3007'
 alias uncommit='git reset --soft HEAD~1'
+alias hprod='heroku run --app sp-api-production rails console'
+alias hdev='heroku run --app sp-api-dev rails console'
 
 # Tmuxinator settings
 export EDITOR='vi'
+
+# Increase history size
+export SAVEHIST=10000
+export HISTSIZE=10000
+
+# History key bindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^R" history-incremental-search-backward
+bindkey "^P" history-substring-search-up
+bindkey "^N" history-substring-search-down
+bindkey "^Y" accept-and-hold
 
 
 
