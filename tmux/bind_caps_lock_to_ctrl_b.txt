@@ -47,26 +47,6 @@ contents for private.xml:
         KeyCode::B, ModifierFlag::CONTROL_L
       </autogen>
     </item>
-    <item>
-      <name>UK Section key to backquote</name>
-      <identifier>private.section_to_backquote</identifier>
-      <only>Terminal</only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::UK_SECTION,
-        KeyCode::BACKQUOTE
-      </autogen>
-    </item>
-    <item>
-      <name>TMUX Inner: backquote key to Ctrl+A</name>
-      <identifier>private.section_to_control_a</identifier>
-      <only>Terminal</only>
-      <autogen>
-        --KeyToKey--
-        KeyCode::BACKQUOTE,
-        KeyCode::A, ModifierFlag::CONTROL_L
-      </autogen>
-    </item>
   </item>
 </root>
 =============================================
