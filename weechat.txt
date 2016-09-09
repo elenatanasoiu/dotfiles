@@ -31,3 +31,7 @@ query someone Hello
 # To paste contents of file
 
 pastebinit file.txt
+
+# To move between chat windows:
+
+Ctrl-N and Ctrl-P
