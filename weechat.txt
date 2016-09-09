@@ -19,3 +19,15 @@ query someone Hello
 
 # To close the buffer:
 /close
+
+# To list channels
+
+/script install buffers.pl
+
+# Enable mouse
+
+/mouse enable
+
+# To paste contents of file
+
+pastebinit file.txt
