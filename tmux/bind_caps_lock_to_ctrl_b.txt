@@ -2,23 +2,23 @@ Disabling CAPS LOCK
 
 If you haven't already done so, gain an extra key and open up your System Preferences > Keyboard > Modifier Keys ... and rebind CAPSLOCK to No Action.
 
-Rebinding CAPSLOCK to CONTROL_R (Right Control Key)
+# Rebinding CAPSLOCK to CONTROL_R (Right Control Key)
 
 Install Seil
 Open Seil
 Change "Caps Lock" to keycode 62.
-Reassigning the Caps Lock
 
-Rebinding CONTROL_R (Right Control Key) to CONTROL + B
+# Reassigning the Caps Lock
+# Rebinding CONTROL_R (Right Control Key) to CONTROL + B
 
 Install Karabiner
 Open Karabiner > Misc & Uninstall
 
 Click "Open private.xml"
-Opening private.xml
+Open private.xml
 
-Copy and Paste the private.xml provided with below.
-Open Karabiner > Change Key
+Copy and Paste the private.xml provided below.
+Go to Karabiner > Change Key
 Click "ReloadXML"
 Toggle open "TMUX Key Remappings"
 Check "TMUX: Right Control to Control+B
