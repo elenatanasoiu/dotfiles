@@ -1,0 +1,21 @@
+# Install
+brew install weechat --with-lua --with-perl --with-python --with-ruby
+
+# Run
+weechat
+
+# In weechat do
+/server add sp afsp.irc.slack.com/6667 -ssl -ssl_dhkey_size=512 -ssl_verify=off -password=****** -username=elena -nicks=elena
+/connect sp
+
+# Find password in https://afsp.slack.com/account/gateways
+
+# Read more here: https://afsp.slack.com/account/gateways
+
+# To message someone
+query someone Hello
+
+# This will open a buffer with the current conversation
+
+# To close the buffer:
+/close
