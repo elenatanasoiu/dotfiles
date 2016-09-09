@@ -1,8 +1,0 @@
-# Opens an image in iTerm 2.9+
-
-# Download script
-
-sudo curl -o /usr/local/bin/imgcat -O https://raw.githubusercontent.com/gnachman/iTerm2/master/tests/imgcat && sudo chmod +x /usr/local/bin/imgcat
-
-# Usage:
-imgcat picture.jpg
