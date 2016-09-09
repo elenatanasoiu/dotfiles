@@ -23,6 +23,8 @@ Click "ReloadXML"
 Toggle open "TMUX Key Remappings"
 Check "TMUX: Right Control to Control+B
 
+YOU HAVE TO RESTART YOUR COMPUTER NOW (Took me a while to figure this out)
+
 ======================================================
 contents for private.xml:
 
