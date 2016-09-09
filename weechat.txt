@@ -10,10 +10,8 @@ weechat
 
 # Find password in https://afsp.slack.com/account/gateways
 
-# Read more here: https://afsp.slack.com/account/gateways
-
 # To message someone
-query someone Hello
+/q <person> Hello
 
 # This will open a buffer with the current conversation
 
@@ -35,3 +33,21 @@ pastebinit file.txt
 # To move between chat windows:
 
 Ctrl-N and Ctrl-P
+
+# To click links: hold Alt while selecting
+
+# To load history:
+
+https://github.com/thoughtbot/weechat-slacklog
+
+curl -o ~/.weechat/ruby/slacklog.rb \
+  "https://raw.githubusercontent.com/thoughtbot/weechat-slacklog/master/slacklog.rb"
+
+# Optionally set the script to autoload when WeeChat starts:
+
+cd ~/.weechat/ruby/autoload && ln -s ../slacklog.rb .
+
+Restart WeeChat or load the script manually:
+
+/script load slacklog.rb
+
