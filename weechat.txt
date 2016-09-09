@@ -5,7 +5,7 @@ brew install weechat --with-lua --with-perl --with-python --with-ruby
 weechat
 
 # In weechat do
-/server add sp afsp.irc.slack.com/6667 -ssl -ssl_dhkey_size=512 -ssl_verify=off -password=****** -username=elena -nicks=elena
+/server add sp afsp.irc.slack.com/6667 -autoconnect -ssl -ssl_dhkey_size=512 -ssl_verify=off -password=****** -username=elena -nicks=elena
 /connect sp
 
 # Find password in https://afsp.slack.com/account/gateways
