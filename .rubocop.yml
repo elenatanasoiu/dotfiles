@@ -1,5 +1,6 @@
 # Paste the contents of this file in ~/.rubocop.yml
 # The add the pre-commit file from the git folder into your project's .git/hooks folder
+# To manually run rubocop use: rubocop -c ~/.rubocop.yml -a
 AllCops:
   Exclude:
   - "**/vendor/**/*"

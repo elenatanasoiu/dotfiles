@@ -51,3 +51,17 @@ Restart WeeChat or load the script manually:
 
 /script load slacklog.rb
 
+# To connect to IRC channels like #lrug:
+
+/server add freenode irc.freenode.com/lrug
+/set irc.server.freenode.autoconnect on
+/set irc.server.freenode.username "Elena"
+/set irc.server.freenode.realname "Elena"
+
+/connect freenode
+
+/join #lrug
+
+
+/set irc.server.freenode.autojoin "#lrug,#elixir-lang,#ruby,#rubyonrails"
+
