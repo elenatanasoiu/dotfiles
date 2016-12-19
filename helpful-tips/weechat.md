@@ -1,49 +1,48 @@
-# Install
-brew install weechat --with-lua --with-perl --with-python --with-ruby
+## Install
+    brew install weechat --with-lua --with-perl --with-python --with-ruby
+## Run
+    weechat
 
-# Run
-weechat
-
-# In weechat do
-/server add sp afsp.irc.slack.com/6667 -autoconnect -ssl -ssl_dhkey_size=512 -ssl_verify=off -password=****** -username=elena -nicks=elena
+## Connect to Slack
+/server add sp xxxxx.irc.slack.com/6667 -autoconnect -ssl -ssl_dhkey_size=512 -ssl_verify=off -password=****** -username=xxxxx -nicks=xxxxx
 /connect sp
 
-# Find password in https://afsp.slack.com/account/gateways
+Find the password in https://xxxxx.slack.com/account/gateways
 
-# To message someone
+## To message someone
 /q <person> Hello
 
-# This will open a buffer with the current conversation
+## This will open a buffer with the current conversation
 
-# To close the buffer:
+## To close the buffer:
 /close
 
-# To list channels
+## To list channels
 
 /script install buffers.pl
 
-# Enable mouse
+## Enable mouse
 
 /mouse enable
 
-# To paste contents of file
+## To paste contents of file
 
 pastebinit file.txt
 
-# To move between chat windows:
+## To move between chat windows:
 
 Ctrl-N and Ctrl-P
 
-# To click links: hold Alt while selecting
+## To click links: hold Alt while selecting
 
-# To load history:
+## To load history:
 
 https://github.com/thoughtbot/weechat-slacklog
 
 curl -o ~/.weechat/ruby/slacklog.rb \
   "https://raw.githubusercontent.com/thoughtbot/weechat-slacklog/master/slacklog.rb"
 
-# Optionally set the script to autoload when WeeChat starts:
+## Optionally set the script to autoload when WeeChat starts:
 
 cd ~/.weechat/ruby/autoload && ln -s ../slacklog.rb .
 
@@ -51,7 +50,7 @@ Restart WeeChat or load the script manually:
 
 /script load slacklog.rb
 
-# To connect to IRC channels like #lrug:
+## To connect to IRC channels like #lrug:
 
 /server add freenode irc.freenode.com/lrug
 /set irc.server.freenode.autoconnect on

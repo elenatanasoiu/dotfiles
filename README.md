@@ -18,5 +18,11 @@ to mangage installing and removing plugins.
 
 - [Chris Toomey](https://github.com/christoomey/dotfiles)
 - [Ben Orenstein](https://github.com/r00k/dotfiles)
-- [Ryanb](https://github.com/ryanb/dotfiles)
+- [Ryan Bates](https://github.com/ryanb/dotfiles)
+- [Gabe Berke Williams](https://github.com/gabebw/dotfiles)
 
+## Installation
+
+    $ git clone git@github.com:elenatanasoiu/dotfiles.git ~/.dotfiles
+    $ cd ~/.dotfiles
+    $ ./install.sh

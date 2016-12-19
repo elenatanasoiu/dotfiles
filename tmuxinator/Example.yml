@@ -1,8 +1,9 @@
-# ~/.tmuxinator/SP.yml
+# To run - mux Example
+# ~/.tmuxinator/Example.yml
 
-name: SP
-root: ~/Work/projects
-pre-window: cd ~/Work/projects
+name: Example
+root: ~/Projects
+pre-window: cd ~/Projects
 
 # Optional tmux socket
 # socket_name: foo
@@ -31,7 +32,7 @@ pre-window: cd ~/Work/projects
 windows:
   - api:
       layout: 8751,278x73,0,0{162x73,0,0[162x37,0,0,0,162x35,0,38,9],115x73,163,0[115x37,163,0,4,115x35,163,38,5]}
-      root: ~/Work/projects/api
+      root: ~/Projects/api
       panes:
         - tail -f development.log
         - clear
@@ -39,7 +40,7 @@ windows:
         - rails c
   - smartpension:
       layout: 8751,278x73,0,0{162x73,0,0[162x37,0,0,0,162x35,0,38,9],115x73,163,0[115x37,163,0,4,115x35,163,38,5]}
-      root: ~/Work/projects/smartpension
+      root: ~/Projects/smartpension
       panes: 
         - clear
         - clear
@@ -47,25 +48,25 @@ windows:
         - rails c	
   - spanner:
       layout: even-horizontal
-      root: ~/Work/projects/spanner
+      root: ~/Projects/spanner
       panes: 
         - clear
         - clear
   - adviser:
       layout: even-horizontal
-      root: ~/Work/projects/adviser
+      root: ~/Projects/adviser
       panes:
         - clear
         - ember s
   - employees:
      layout: even-horizontal
-     root: ~/Work/projects/employee
+     root: ~/Projects/employee
      panes: 
        - clear 
        - ember s -p 3007
   - dotfiles:
      layout: even-horizontal 
-     root: ~/Work/projects/dotfiles
+     root: ~/Projects/dotfiles
      panes:
        - clear
        - clear

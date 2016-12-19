@@ -1,14 +1,14 @@
-1. Disabling CAPS LOCK
+## Disabling CAPS LOCK
 
 If you haven't already done so, gain an extra key and open up your System Preferences > Keyboard > Modifier Keys ...
 and rebind CAPSLOCK to No Action.
 
-2. Rebinding CAPSLOCK to CONTROL_R (Right Control Key)
+## Rebinding CAPSLOCK to CONTROL_R (Right Control Key)
 
 Install Seil
 Open Seil && Change "Caps Lock" to keycode 62.
 
-3. Rebinding CONTROL_R (Right Control Key) to CONTROL + B
+## Rebinding CONTROL_R (Right Control Key) to CONTROL + B
 
 Install Karabiner
 Open Karabiner > Misc & Uninstall
