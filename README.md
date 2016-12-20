@@ -8,8 +8,7 @@ These are my dotfiles that setup my system the way I like it. I try to keep them
   [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh). 
 
 - Vim - I sometimes use VIM as my editor. I use
-[pathogen](https://github.com/tpope/vim-pathogen) along with the
-[vim-update-bundle](https://github.com/bronson/vim-update-bundles) ruby script
+the [vim-update-bundle](https://github.com/bronson/vim-update-bundles) ruby script
 to mangage installing and removing plugins.
 
 - Git - Git for version control

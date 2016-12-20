@@ -1,0 +1,5 @@
+DOTFILES_DIRS=$HOME/Projects/dotfiles
+EXCLUDES="helpful-tips backups README.md install.sh setup"
+SYMLINK_DIRS=""
+TAGS=""
+

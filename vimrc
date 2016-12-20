@@ -1,3 +1,4 @@
+"===========================================================================
 "                                ~My vimrc~
 "===========================================================================
 " Author:        Elena Tanasoiu [http://elenatanasoiu.com]
@@ -7,17 +8,21 @@
 " Each plugin is configured in its own file in ~/.vim/rcplugins
 "---------------------------------------------------------------------
 
-syntax on 				" Activates syntax highlighting
-set number 				" Activate line numbering
-set history=500				" keep 500 lines of command line history
-set ruler				" show the cursor position all the time
+syntax on 				              " Activates syntax highlighting
+set number 				              " Activate line numbering
+set history=500				          " keep 500 lines of command line history
+set ruler				                " show the cursor position all the time
 set nowrap
 set autoindent				
-set noerrorbells visualbell t_vb=
+set copyindent                  " Copy previous indentation on autoindenting
+set noerrorbells visualbell t_vb=     " Disable error sound
 set paste
-set tabstop=2
-set shiftwidth=2
+set tabstop=2                         " Change tabs to 2 spaces
+set shiftwidth=2                                    
 set expandtab
+set autoread                    " Don't ask if I want to reload change file
+
+
 
 "colorscheme jellybeans
 
@@ -54,9 +59,11 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rails'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'thoughtbot/vim-rspec'
-"Plugin 'christoomey/vim-tmux-runner'
 Plugin 'tpope/vim-dispatch'
 Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/vim-emoji'
+
 
 " Colors 
 Plugin 'nanotech/jellybeans.vim'
@@ -65,26 +72,15 @@ Plugin 'nanotech/jellybeans.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Brief help
-" " :PluginList       - lists configured plugins
-" " :PluginInstall    - installs plugins; append `!` to update or just
-" :PluginUpdate
-" " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" " :PluginClean      - confirms removal of unused plugins; append `!` to
-" auto-approve removal
-" "
-" " see :h vundle for more details or wiki for FAQ
-" " Put your non-Plugin stuff after this line
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN SETTINGS
-"================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Make CtrlP use ag for listing the files. Way faster and no useless files.
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
 " Allow vim-rspec to be able to send tests to tmux
 let g:rspec_command = "!clear && bundle exec rspec {spec}"
-"For vim-tmux-runner: let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE (thanks Gary Bernhardt)
@@ -100,4 +96,44 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" STATUS LINE
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" always display status line
+set laststatus=2
+
+let g:lightline = {
+      \ 'colorscheme': 'Tomorrow_Night_Eighties',
+      \ 'active': {
+      \   'left': [
+      \             ['mode', 'paste'],
+      \             ['emojipocalypse'],
+      \             ['fugitive', 'readonly', 'myfilename', 'modified']
+      \           ]
+      \ },
+      \ 'component': {
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
+      \   'emojipocalypse': '%{emoji#for("sparkles")}',
+      \   'readonly': '%{(&filetype!="help" && &readonly) ? emoji#for("lock") : ""}',
+      \ },
+      \ 'component_function': {
+      \   'myfilename': 'LightLineFilename',
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+\ }
+
+function! LightLineFilename()
+  let git_root = fnamemodify(fugitive#extract_git_dir(expand("%:p")), ":h")
+
+  if expand("%:t") == ""
+    return "Elena"
+  elseif git_root != "" && git_root != "."
+    return substitute(expand("%:p"), git_root . "/", "", "")
+  else
+    return expand("%:p")
+  endif
+endfunction
