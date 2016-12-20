@@ -2,7 +2,6 @@
 # ALIASES #
 ###########
 
-alias d='cd ~/Projects/dotfiles'
 alias ga='git add'
 alias gp='git push'
 alias gs='git status'
@@ -23,6 +22,7 @@ alias gco='git checkout'
 alias rspec='bundle exec rspec'
 alias rubo='rubocop -c .rubocop.yml -a'
 alias uncommit='git reset --soft HEAD~1'
+alias dotfiles='cd ~/Projects/dotfiles'
 alias gratitude='vim ~/Dropbox/_Elena/Documents/Journal/gratitude.txt'
 alias start='vim ~/Dropbox/_Elena/Work/Unboxed/notes/day-start-checklist.md'
 alias feels='vim ~/Dropbox/_Elena/Documents/Journal/notes/feels.md'
@@ -31,4 +31,12 @@ alias learn='cd ~/Dropbox/_Elena/Learning'
 alias howto='cd ~/Dropbox/_Elena/Learning/Howtos'
 alias vimnotes='vim ~/Dropbox/_Elena/Learning/Upcase/vim_trail/notes.txt'
 
+# Make commands interactive
+alias cp="cp -iv"
+alias rm="rm -iv"
+alias mv="mv -iv"
+alias ls="ls -FGh"
+alias rm="rm -i"
 
+# User modern regexps for sed, i.e. "(one|two)", not "\(one\|two\)"
+alias sed="sed -E"
