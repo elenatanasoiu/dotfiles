@@ -4,9 +4,8 @@
     weechat
 
 ## Connect to Slack
-/server add name-of-team xxxxx.irc.slack.com/6667 -autoconnect -ssl -ssl_dhkey_size=512 -ssl_verify=off -password=****** -username=xxxxx -nicks=xxxxx
-
-/connect name-of-team
+/server add sp xxxxx.irc.slack.com/6667 -autoconnect -ssl -ssl_dhkey_size=512 -ssl_verify=off -password=****** -username=xxxxx -nicks=xxxxx
+/connect sp
 
 Find the password in https://xxxxx.slack.com/account/gateways
 
@@ -34,15 +33,14 @@ pastebinit file.txt
 
 Ctrl-N and Ctrl-P
 
-## To click links: 
-
-Hold Alt while selecting
+## To click links: hold Alt while selecting
 
 ## To load history:
 
-Go here: 
-
 https://github.com/thoughtbot/weechat-slacklog
+
+curl -o ~/.weechat/ruby/slacklog.rb \
+  "https://raw.githubusercontent.com/thoughtbot/weechat-slacklog/master/slacklog.rb"
 
 ## Optionally set the script to autoload when WeeChat starts:
 
@@ -55,13 +53,9 @@ Restart WeeChat or load the script manually:
 ## To connect to IRC channels like #lrug:
 
 /server add freenode irc.freenode.com/lrug
-
 /set irc.server.freenode.autoconnect on
-
 /set irc.server.freenode.username "Elena"
-
 /set irc.server.freenode.realname "Elena"
-
 
 /connect freenode
 
