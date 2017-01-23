@@ -69,3 +69,8 @@ Restart WeeChat or load the script manually:
 For more settings check out 
 
     https://gist.github.com/pascalpoitras/8406501#isetpl
+    
+# Turning off beeping from beep script
+Edit `~/.weechat/plugins.conf`
+
+Change to "off" all `beep_*` variables that are set to "on" 
