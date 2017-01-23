@@ -35,3 +35,6 @@ function mkgit() { mkdir $1 && cd $1 && git init }
 
 # Postgres
 alias restart-postgres="rm /usr/local/var/postgres/postmaster.pid && cd ~/Library/LaunchAgents && launchctl unload homebrew.mxcl.postgresql.plist && launchctl load -w homebrew.mxcl.postgresql.plist"
+
+# Go
+export GOPATH="$HOME/Projects/Personal/go_path"
