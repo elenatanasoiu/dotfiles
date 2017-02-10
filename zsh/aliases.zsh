@@ -18,17 +18,18 @@ alias gm='git commit -m'
 alias gb='git branch'
 alias gpo='git push --set-upstream origin'
 alias gpu='git pull'
+alias uncommit='git reset --soft HEAD~1'
 
 # tmux
 alias mux='tmuxinator'
 alias muxkill='tmux kill-session'
 
+# Rails
 alias rc='rails console'
 alias rs='rails s'
 alias rss='rails s -p 3004'
 alias rspec='bundle exec rspec'
 alias rubo='rubocop -c .rubocop.yml -a'
-alias uncommit='git reset --soft HEAD~1'
 
 # Notes & Learning
 alias gratitude='vim ~/Dropbox/_Elena/Documents/Journal/gratitude.txt'
@@ -51,3 +52,6 @@ alias sed="sed -E"
 
 # Wego weather
 alias wego=$GOPATH/bin/wego
+
+# Other
+alias v='vim'

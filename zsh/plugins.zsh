@@ -1,3 +1,3 @@
 # Plugins
-plugins=(rails ruby git history-substring-search zsh-syntax-highlighting heroku brew gem)
+plugins=(rails ruby ssh-agent git history-substring-search zsh-syntax-highlighting heroku brew gem)
 

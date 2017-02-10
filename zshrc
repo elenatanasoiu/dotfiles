@@ -38,3 +38,5 @@ alias restart-postgres="rm /usr/local/var/postgres/postmaster.pid && cd ~/Librar
 
 # Go
 export GOPATH="$HOME/Projects/Personal/go_path"
+
+
