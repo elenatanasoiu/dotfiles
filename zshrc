@@ -12,7 +12,13 @@ for file in "$BASE/$1"/*.zsh; do
 done
 
 # Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
+
+# For the VM, using rbenv: 
+setopt extendedglob
+for file in /etc/profile.d/**/^bash_completion*; do 
+    source $file; 
+done
 
 # Use thefuck script: https://github.com/nvbn/thefuck
 eval "$(thefuck --alias)"
