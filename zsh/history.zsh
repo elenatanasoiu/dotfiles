@@ -12,4 +12,8 @@ bindkey "^Y" accept-and-hold
 export SAVEHIST=10000
 export HISTSIZE=10000
 
+# Keeps history in tmux tabs separate
+setopt noincappendhistory
+setopt nosharehistory
+
 
