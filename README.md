@@ -1,6 +1,6 @@
 # Elena's Dotfiles
 
-These are my dotfiles that setup my system the way I like it. I try to keep them clean and up to date.
+💰 NO JUDGING
 
 ## Key Features
 
@@ -19,6 +19,7 @@ to mangage installing and removing plugins.
 - [Ben Orenstein](https://github.com/r00k/dotfiles)
 - [Ryan Bates](https://github.com/ryanb/dotfiles)
 - [Gabe Berke Williams](https://github.com/gabebw/dotfiles)
+- [Monica Dinculescu](https://github.com/notwaldorf/.not-quite-dotfiles)
 
 ## Installation
 

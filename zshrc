@@ -1,6 +1,10 @@
 # use vim as the visual editor
-export VISUAL='vim'
-export EDITOR=$VISUAL
+# export VISUAL='vim'
+# export EDITOR=$VISUAL
+
+# To be used with `bundle open`
+export EDITOR="subl -w"
+export BUNDLER_EDITOR="subl"
 
 # Path to my oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
@@ -44,5 +48,3 @@ alias restart-postgres="rm /usr/local/var/postgres/postmaster.pid && cd ~/Librar
 
 # Go
 export GOPATH="$HOME/Projects/Personal/go_path"
-
-

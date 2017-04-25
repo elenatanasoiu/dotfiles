@@ -18,6 +18,7 @@ alias gm='git commit -m'
 alias gb='git branch'
 alias gpo='git push --set-upstream origin'
 alias gpu='git pull'
+alias goops="git reset --hard HEAD"
 alias uncommit='git reset --soft HEAD~1'
 
 # tmux
