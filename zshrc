@@ -48,3 +48,9 @@ alias restart-postgres="rm /usr/local/var/postgres/postmaster.pid && cd ~/Librar
 
 # Go
 export GOPATH="$HOME/Projects/Personal/go_path"
+
+# ssh-key with passphrase, with ssh-agent
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s`
+  ssh-add
+fi
