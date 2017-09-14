@@ -56,3 +56,7 @@ alias wego=$GOPATH/bin/wego
 
 # Other
 alias v='vim'
+
+# Rubymine
+alias rubymine='open -a rubymine'
+
