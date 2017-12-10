@@ -20,7 +20,12 @@ alias gposu='git push --set-upstream origin'
 alias gpo='git push origin'
 alias gpu='git pull'
 alias goops="git reset --hard HEAD"
-alias uncommit='git reset --soft HEAD~1'
+alias uncommit='git reset --soft HEAD~1' # undo last unpushed commit
+alias sla='git log --oneline --decorate --graph --all' # print log on one line, with graph and all branches
+alias plog="git log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'" # print enhanced git log, with timestamp and prettified format
+alias glog='git log -E -i --grep' # search in commit messages in git log using regular expressions
+alias glogs='git log -S' # search the code committed in git log using regex
+
 
 # tmux
 alias mux='tmuxinator'
@@ -35,12 +40,11 @@ alias rubo='rubocop -c .rubocop.yml -a'
 
 # Notes & Learning
 alias gratitude='vim ~/Dropbox/_Elena/Documents/Journal/gratitude.txt'
-alias start='vim ~/Dropbox/_Elena/Work/Unboxed/notes/day-start-checklist.md'
-alias feels='vim ~/Dropbox/_Elena/Documents/Journal/notes/feels.md'
+alias start='vim ~/Dropbox/_Elena/Documents/Jounal/day-start-checklist.md'
+alias feels='vim ~/Dropbox/_Elena/Documents/Journal/feels.md'
 alias upcase='cd ~/Dropbox/_Elena/Learning/Upcase'
 alias learn='cd ~/Dropbox/_Elena/Learning'
 alias howto='cd ~/Dropbox/_Elena/Learning/Howtos'
-alias vimnotes='vim ~/Dropbox/_Elena/Learning/Upcase/vim_trail/notes.txt'
 
 # Make commands interactive
 alias cp="cp -iv"
