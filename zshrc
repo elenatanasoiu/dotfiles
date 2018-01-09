@@ -52,5 +52,5 @@ export GOPATH="$HOME/Projects/Personal/go_path"
 # ssh-key with passphrase, with ssh-agent
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`
-  ssh-add
+  ssh-add -A
 fi

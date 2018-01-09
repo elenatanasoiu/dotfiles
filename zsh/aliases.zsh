@@ -4,6 +4,8 @@
 
 alias be='bundle exec'
 alias dotfiles='cd ~/Projects/dotfiles'
+alias vmfolder='cd ~/Projects/Work/gds/govuk-puppet/development-vm'
+alias gds='cd ~/Projects/Work/gds'
 
 # git
 alias ga='git add'
@@ -25,7 +27,6 @@ alias sla='git log --oneline --decorate --graph --all' # print log on one line, 
 alias plog="git log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'" # print enhanced git log, with timestamp and prettified format
 alias glog='git log -E -i --grep' # search in commit messages in git log using regular expressions
 alias glogs='git log -S' # search the code committed in git log using regex
-
 
 # tmux
 alias mux='tmuxinator'
