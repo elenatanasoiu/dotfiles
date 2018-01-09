@@ -50,6 +50,11 @@ alias restart-postgres="rm /usr/local/var/postgres/postmaster.pid && cd ~/Librar
 export GOPATH="$HOME/Projects/Personal/go_path"
 
 # ssh-key with passphrase, with ssh-agent
+# For you to add the ssh password to the keychain so you don't get asked for it everytime, you need to do `ssh-add -K` the first time you add your key file
+# This will store the password in the keychain and then you can do `ssh-add -A` like we did below. 
+# So please remember to do ssh-add -K the first time
+# NB: This is OSX specific (the storing of the password in the keychain and then doing ssh-add -A subsequent times) so it will not work in Ubuntu or other linux flavors (VM flavors)
+# For linux you can try doing just `ssh-add` below
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`
   ssh-add -A
