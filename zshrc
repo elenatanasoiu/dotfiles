@@ -1,10 +1,10 @@
 # use vim as the visual editor
-# export VISUAL='vim'
-# export EDITOR=$VISUAL
+export VISUAL='vim'
+export EDITOR=$VISUAL
 
 # To be used with `bundle open`
-export EDITOR="subl -w"
-export BUNDLER_EDITOR="subl"
+# export EDITOR="subl -w"
+# export BUNDLER_EDITOR="subl"
 
 # Path to my oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
@@ -17,15 +17,6 @@ done
 
 # Add RVM to PATH for scripting
 # export PATH="$PATH:$HOME/.rvm/bin"
-
-# For the VM, using rbenv: 
-setopt extendedglob
-for file in /etc/profile.d/**/^bash_completion*; do 
-    source $file; 
-done
-
-# Use thefuck script: https://github.com/nvbn/thefuck
-eval "$(thefuck --alias)"
 
 # Modify the prompt to contain git branch name if applicable
 # From: https://github.com/thoughtbot/dotfiles/blob/dbb72cea5f3e857da519abf08aa62aaa61ccfd52/zshrc#L1-L9
@@ -59,3 +50,28 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`
   ssh-add -A
 fi
+
+#PATH for rbenv
+export PATH="$HOME/.rbenv/shims:$PATH"
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+
+if [ -f "$HOME/.env" ]; then
+  set -o allexport
+  source "$HOME/.env"
+  set +o allexport
+fi
+
+source ~/.zsh/tmuxinator.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Loading private tokens in a separate global env var file
+source "$HOME/global_env_vars"
+
+# Load shared services from spacedragons dotfiles
+if [ -d "$HOME/bin" ]; then
+  export PATH="$HOME/bin:$PATH"
+fi
+

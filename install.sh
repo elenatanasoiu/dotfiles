@@ -7,6 +7,9 @@ if [ ! -d ~/.zsh-plugins/zsh-syntax-highlighting ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh-plugins/zsh-syntax-highlighting
 fi
 
+echo "Installing Vundle for plugins"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 echo "Installing rcm"
 brew install thoughtbot/formulae/rcm
 
@@ -24,3 +27,8 @@ rcup -v
 
 echo "Installing Vim packages..."
 vim +PlugInstall +qa
+
+echo "Installing tmux and tmuxinator"
+brew install tmux
+gem install tmuxinator
+tmuxinator doctor
