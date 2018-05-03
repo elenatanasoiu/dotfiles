@@ -38,6 +38,7 @@ alias rs='rails s'
 alias rss='rails s -p 3004'
 alias rspec='bundle exec rspec'
 alias rubo='rubocop -c .rubocop.yml -a'
+alias rubodiff='git diff --name-only HEAD~1 | xargs bundle exec rubocop -a'
 
 # Notes & Learning
 alias gratitude='vim ~/Dropbox/_Elena/Documents/Journal/gratitude.txt'
