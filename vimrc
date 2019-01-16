@@ -6,21 +6,21 @@
 "
 " I am using Vundle to manage my plugins, which is configured below
 " Each plugin is configured in its own file in ~/.vim/rcplugins
-"---------------------------------------------------------------------
+"---------------------------------------------------------------------------
 
-syntax on 				              " Activates syntax highlighting
-set number 				              " Activate line numbering
-set history=500				          " keep 500 lines of command line history
-set ruler				                " show the cursor position all the time
+syntax on 				   " Activates syntax highlighting
+set number 				   " Activate line numbering
+set history=500            " keep 500 lines of command line history
+set ruler				   " show the cursor position all the time
 set nowrap
 set autoindent				
-set copyindent                  " Copy previous indentation on autoindenting
+set copyindent             " Copy previous indentation on autoindenting
 set noerrorbells visualbell t_vb=     " Disable error sound
 set paste
-set tabstop=2                         " Change tabs to 2 spaces
+set tabstop=2              " Change tabs to 2 spaces
 set shiftwidth=2                                    
 set expandtab
-set autoread                    " Don't ask if I want to reload change file
+set autoread               " Don't ask if I want to reload change file
 
 
 

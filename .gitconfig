@@ -1,0 +1,7 @@
+[user]
+	name = Elena Tanasoiu
+	email = elena.tanasoiu@gmail.com
+[core]
+    excludesfile = ~/.gitignore
+[color]
+    ui = always

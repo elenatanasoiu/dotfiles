@@ -32,3 +32,21 @@ echo "Installing tmux and tmuxinator"
 brew install tmux
 gem install tmuxinator
 tmuxinator doctor
+
+cd ~
+
+ln -s ~/.dotfiles/vimrc ~/.vimrc
+
+rm .zshrc
+ln -s ~/dotfiles/zshrc ~/.zshrc
+mkdir ~/.zsh && cd .zsh
+ln -s ~/dotfiles/zsh/aliases.zsh ~/.zsh/aliases.zsh
+ln -s ~/dotfiles/zsh/history.zsh ~/.zsh/history.zsh
+ln -s ~/dotfiles/zsh/plugins.zsh ~/.zsh/plugins.zsh
+
+ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
+
+
+source ~/.zshrc
+
