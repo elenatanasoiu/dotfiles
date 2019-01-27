@@ -25,4 +25,9 @@ eval "$(nodenv init -)"
 
 export PATH=~/Library/Python/2.7/bin/:$PATH
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 source $ZSH/oh-my-zsh.sh
+
