@@ -33,6 +33,11 @@ brew install tmux
 gem install tmuxinator
 tmuxinator doctor
 
+echo "Installing hub"
+brew install hub
+mkdir -p ~/.zsh/completions
+cp zsh/hub/hub.zsh_completion ~/.zsh/completions/_hub
+
 cd ~
 
 ln -s ~/.dotfiles/vimrc ~/.vimrc

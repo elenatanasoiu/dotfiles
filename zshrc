@@ -23,6 +23,13 @@ ZSH_THEME="robbyrussell"
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 
+# Add autocomplete for hub
+fpath=(~/.zsh/completions $fpath)
+autoload -U compinit && compinit
+
+# Alias `hub` tool to `git`
+eval "$(hub alias -s)"
+
 export PATH=~/Library/Python/2.7/bin/:$PATH
 
 export PATH=/usr/local/opt/postgresql@9.5/bin:$PATH
