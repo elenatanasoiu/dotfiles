@@ -20,7 +20,10 @@ alias gpo='git push origin'
 alias oops="git reset --hard HEAD"
 alias uncommit='git reset --soft HEAD~1' # undo last unpushed commit
 alias amen='git commit --amend --no-edit'
-
+# Get last commit message
+alias lcm='git log -1 --pretty=%B | pbcopy'
+# Temporary skip rubocop harrassment during rebase 
+alias skipgc='SKIP=RuboCop git commit -v'
 
 # Git Log 
 alias sla='git log --oneline --decorate --graph --all' # print log on one line, with graph and all branches
@@ -36,8 +39,9 @@ alias muxkill='tmux kill-session'
 alias rc='rails console'
 alias rs='rails s'
 alias rspec='bundle exec rspec'
-alias rubo='rubocop -c .rubocop.yml -a'
-alias rubodiff='git diff --name-only HEAD~1 | xargs bundle exec rubocop -a'
+alias rubo='bundle exec rubocop -a'
+# Run Rubocop with autocorrect only on staged changes
+alias rubodiff='git diff --name-only HEAD | xargs bundle exec rubocop -a'
 
 # Minitest
 alias bert='bundle exec rake test'
