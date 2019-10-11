@@ -64,3 +64,5 @@ alias rm="rm -i"
 # Rubymine
 alias rubymine='open -a rubymine'
 
+# Flocker
+alias flocker="~/projects/futurelearn/script/flocker"

@@ -13,13 +13,13 @@ set number 				   " Activate line numbering
 set history=500            " keep 500 lines of command line history
 set ruler				   " show the cursor position all the time
 set nowrap
-set autoindent				
+set autoindent				     " Auto-indent
 set copyindent             " Copy previous indentation on autoindenting
 set noerrorbells visualbell t_vb=     " Disable error sound
 set paste
 set tabstop=2              " Change tabs to 2 spaces
-set shiftwidth=2                                    
-set expandtab
+set shiftwidth=2           " No of spaces to Auto-indent by                         
+set expandtab              " Expand tabs to spaces
 set autoread               " Don't ask if I want to reload change file
 
 
