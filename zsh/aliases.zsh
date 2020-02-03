@@ -66,3 +66,9 @@ alias rubymine='open -a rubymine'
 
 # Flocker
 alias flocker="~/projects/futurelearn/script/flocker"
+
+# FL shortcuts
+alias wp='bundle exec bin/webpack -w --progress'
+alias nh='node hypernova.js'
+alias wds='bundle exec bin/webpack-dev-server'
+alias ffs='bundle install && bundle exec rake db:migrate && yarn'
