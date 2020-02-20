@@ -47,6 +47,8 @@ mkdir ~/.zsh && cd .zsh
 ln -s ~/dotfiles/zsh/aliases.zsh ~/.zsh/aliases.zsh
 ln -s ~/dotfiles/zsh/history.zsh ~/.zsh/history.zsh
 ln -s ~/dotfiles/zsh/plugins.zsh ~/.zsh/plugins.zsh
+ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
