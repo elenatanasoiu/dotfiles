@@ -6,7 +6,7 @@ alias be='bundle exec'
 alias dotfiles='cd ~/Projects/dotfiles'
 
 # foreman
-alias fart='bundle exec foreman start'
+alias fart='foreman start'
 
 # git
 alias ga='git add'
@@ -14,7 +14,7 @@ alias gco='git checkout'
 alias gs='git status'
 alias gc='git commit -v'
 alias gd='git diff'
-alias gb='git branch'
+alias gb='git branch --sort=-committerdate'
 alias gposu='git push --set-upstream origin'
 alias gpo='git push origin'
 alias oops="git reset --hard HEAD"
@@ -24,6 +24,10 @@ alias amen='git commit --amend --no-edit'
 alias lcm='git log -1 --pretty=%B | pbcopy'
 # Temporary skip rubocop harrassment during rebase 
 alias skipgc='SKIP=RuboCop git commit -v'
+# Lint
+alias lint='pre-commit run'
+# Create a wip commit
+alias wip='gc -m "WIP" --no-verify'
 
 # Git Log 
 alias sla='git log --oneline --decorate --graph --all' # print log on one line, with graph and all branches
@@ -46,14 +50,6 @@ alias rubodiff='git diff --name-only HEAD | xargs bundle exec rubocop -a'
 # Minitest
 alias bert='bundle exec rake test'
 
-# Notes & Learning
-alias gratitude='vim ~/Dropbox/_Elena/Documents/Journal/gratitude.txt'
-alias start='vim ~/Dropbox/_Elena/Documents/Jounal/day-start-checklist.md'
-alias feels='vim ~/Dropbox/_Elena/Documents/Journal/feels.md'
-alias upcase='cd ~/Dropbox/_Elena/Learning/Upcase'
-alias learn='cd ~/Dropbox/_Elena/Learning'
-alias howto='cd ~/Dropbox/_Elena/Learning/Howtos'
-
 # Make commands interactive
 alias cp="cp -iv"
 alias rm="rm -iv"
@@ -62,13 +58,12 @@ alias ls="ls -FGh"
 alias rm="rm -i"
 
 # Rubymine
-alias rubymine='open -a rubymine'
+alias mine='open -a rubymine'
 
 # Flocker
 alias flocker="~/projects/futurelearn/script/flocker"
 
 # FL shortcuts
-alias wp='bundle exec bin/webpack -w --progress'
-alias nh='node hypernova.js'
-alias wds='bundle exec bin/webpack-dev-server'
-alias ffs='bundle install && bundle exec rake db:migrate && yarn'
+alias ffs='bundle install && bundle exec rake db:migrate && bundle exec rake db:test:prepare && yarn'
+alias release-pl='fligo lock futurelearn -e playground --release'
+alias lock-pl='fligo lock -e playground futurelearn --create'
