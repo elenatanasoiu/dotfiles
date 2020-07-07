@@ -41,4 +41,8 @@ source ~/.zshrc
 echo "Installing tig"
 brew install tig
 
+echo "Install advice"
+brew install fortune
+brew install cowsay
+
 echo "Done!"

@@ -67,3 +67,6 @@ alias flocker="~/projects/futurelearn/script/flocker"
 alias ffs='bundle install && bundle exec rake db:migrate && bundle exec rake db:test:prepare && yarn'
 alias release-pl='fligo lock futurelearn -e playground --release'
 alias lock-pl='fligo lock -e playground futurelearn --create'
+
+# Life aliases
+alias cow="fortune | cowsay"
