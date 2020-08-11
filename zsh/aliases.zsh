@@ -6,7 +6,7 @@ alias be='bundle exec'
 alias dotfiles='cd ~/Projects/dotfiles'
 
 # foreman
-alias fart='foreman start'
+alias fart='fligo app start'
 
 # git
 alias ga='git add'
@@ -27,7 +27,7 @@ alias skipgc='SKIP=RuboCop git commit -v'
 # Lint
 alias lint='pre-commit run'
 # Create a wip commit
-alias wip='gc -m "WIP" --no-verify'
+alias wip='git add . && gc -m "WIP" --no-verify'
 
 # Git Log 
 alias sla='git log --oneline --decorate --graph --all' # print log on one line, with graph and all branches
@@ -42,7 +42,6 @@ alias muxkill='tmux kill-session'
 # Rails
 alias rc='rails console'
 alias rs='rails s'
-alias rspec='bundle exec rspec'
 alias rubo='bundle exec rubocop -a'
 # Run Rubocop with autocorrect only on staged changes
 alias rubodiff='git diff --name-only HEAD | xargs bundle exec rubocop -a'
@@ -60,9 +59,6 @@ alias rm="rm -i"
 # Rubymine
 alias mine='open -a rubymine'
 
-# Flocker
-alias flocker="~/projects/futurelearn/script/flocker"
-
 # FL shortcuts
 alias ffs='bundle install && bundle exec rake db:migrate && bundle exec rake db:test:prepare && yarn'
 alias release-pl='fligo lock futurelearn -e playground --release'
@@ -70,3 +66,7 @@ alias lock-pl='fligo lock -e playground futurelearn --create'
 
 # Life aliases
 alias cow="fortune | cowsay"
+
+# Docker
+alias prune-af="docker system prune -a -f" # clean everything
+alias docker-rm-all="docker rm -f $(docker images -aq)" # removes all images
