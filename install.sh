@@ -45,4 +45,7 @@ echo "Install advice"
 brew install fortune
 brew install cowsay
 
+echo "Install terminal recording tool"
+brew install asciinema
+
 echo "Done!"
