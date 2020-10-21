@@ -63,7 +63,8 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/vim-emoji'
-
+Plugin 'dense-analysis/ale'
+Plugin 'fatih/vim-go'
 
 " Colors 
 Plugin 'nanotech/jellybeans.vim'
@@ -127,7 +128,7 @@ let g:lightline = {
 \ }
 
 function! LightLineFilename()
-  let git_root = fnamemodify(fugitive#extract_git_dir(expand("%:p")), ":h")
+  let git_root = fnamemodify(FugitiveExtractGitDir(expand("%:p")), ":h")
 
   if expand("%:t") == ""
     return "Elena"

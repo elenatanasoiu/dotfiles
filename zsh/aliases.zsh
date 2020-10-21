@@ -58,6 +58,11 @@ alias rm="rm -i"
 
 # Rubymine
 alias mine='open -a rubymine'
+alias minefrontend='open -a rubymine ~/projects/frontend'
+alias minefl='open -a rubymine ~/projects/futurelearn'
+alias minetf='open -a rubymine ~/projects/terraform'
+alias minedeployment='open -a rubymine ~/projects/deployment'
+alias minedns='open -a rubymine ~/projects/dns'
 
 # FL shortcuts
 alias ffs='bundle install && bundle exec rake db:migrate && bundle exec rake db:test:prepare && yarn'
