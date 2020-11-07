@@ -22,8 +22,6 @@ set shiftwidth=2           " No of spaces to Auto-indent by
 set expandtab              " Expand tabs to spaces
 set autoread               " Don't ask if I want to reload change file
 
-
-
 "colorscheme jellybeans
 
 let mapleader = "\<Space>"
@@ -35,7 +33,7 @@ nmap k gk " Scroll up through wrapped lines
 imap jk <esc> " Escaping from insert mode, normally done with ESC or <C-[>
 imap kj <esc> " Escaping from insert mode, normally done with ESC or <C-[>
 map <leader>co mmggVG"*y`m  		" copy the entire contents of a file to the system register
-"map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>t :w<cr>:call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
@@ -65,6 +63,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/vim-emoji'
 Plugin 'dense-analysis/ale'
 Plugin 'fatih/vim-go'
+Plugin 'junegunn/fzf.vim'
 
 " Colors 
 Plugin 'nanotech/jellybeans.vim'
@@ -83,6 +82,9 @@ let g:ctrlp_use_caching = 0
 " Allow vim-rspec to be able to send tests to tmux
 let g:rspec_command = "!clear && bundle exec rspec {spec}"
 
+" Fuzzy finder 
+set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE (thanks Gary Bernhardt)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

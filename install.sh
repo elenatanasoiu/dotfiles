@@ -20,9 +20,9 @@ echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 echo "Installing plugins for zsh"
-git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
-git clone https://github.com/horosgrisa/mysql-colorize $ZSH_CUSTOM/plugins/mysql-colorize
-git clone https://github.com/amstrad/oh-my-matrix $ZSH_CUSTOM/plugins/oh-my-matrix
+git clone https://github.com/MichaelAquilina/zsh-you-should-use.git "$ZSH_CUSTOM/plugins/you-should-use"
+git clone https://github.com/horosgrisa/mysql-colorize "$ZSH_CUSTOM/plugins/mysql-colorize"
+git clone https://github.com/amstrad/oh-my-matrix "$ZSH_CUSTOM/plugins/oh-my-matrix"
 
 echo "Linking dotfiles into ~..."
 cd ~
@@ -38,9 +38,6 @@ echo "Adding global gitignore"
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
-echo "Reloading zsh"
-source ~/.zshrc
-
 echo "Installing tig"
 brew install tig
 
@@ -50,5 +47,17 @@ brew install cowsay
 
 echo "Install terminal recording tool"
 brew install asciinema
+
+echo "Install fuzzy finder"
+brew install fzf
+"$(brew --prefix)/opt/fzf/install"
+echo "Install ripgrep to use with fzf"
+brew install ripgrep
+
+echo "Install asciiquarium"
+brew install asciiquarium
+
+echo "Reloading zsh"
+source ~/.zshrc
 
 echo "Done!"
