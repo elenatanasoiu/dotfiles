@@ -28,6 +28,9 @@ alias skipgc='SKIP=RuboCop git commit -v'
 alias lint='pre-commit run'
 # Create a wip commit
 alias wip='git add . && gc -m "WIP" --no-verify'
+# Fixup
+alias fixup='git commit --fixup'
+alias fsquash='git rebase -i --autosquash origin/master'
 
 # Git Log 
 alias sla='git log --oneline --decorate --graph --all' # print log on one line, with graph and all branches
