@@ -26,13 +26,13 @@ git clone https://github.com/amstrad/oh-my-matrix "$ZSH_CUSTOM/plugins/oh-my-mat
 
 echo "Linking dotfiles into ~..."
 cd ~
-ln -s ~/dotfiles/vimrc ~/.vimrc
-ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
 mkdir ~/.zsh && cd .zsh
 ln -s ~/dotfiles/zsh/aliases.zsh ~/.zsh/aliases.zsh
 ln -s ~/dotfiles/zsh/history.zsh ~/.zsh/history.zsh
 ln -s ~/dotfiles/zsh/plugins.zsh ~/.zsh/plugins.zsh
-ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
 echo "Adding global gitignore"
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
@@ -45,17 +45,11 @@ echo "Install advice"
 brew install fortune
 brew install cowsay
 
-echo "Install terminal recording tool"
-brew install asciinema
-
 echo "Install fuzzy finder"
 brew install fzf
 "$(brew --prefix)/opt/fzf/install"
 echo "Install ripgrep to use with fzf"
 brew install ripgrep
-
-echo "Install asciiquarium"
-brew install asciiquarium
 
 echo "Reloading zsh"
 source ~/.zshrc

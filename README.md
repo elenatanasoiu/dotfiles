@@ -9,7 +9,7 @@
 
 - Vim - I sometimes use VIM as my editor. I use
 the [vim-update-bundle](https://github.com/bronson/vim-update-bundles) ruby script
-to mangage installing and removing plugins.
+to manage installing and removing plugins.
 
 - Git - Git for version control
 
@@ -19,7 +19,6 @@ to mangage installing and removing plugins.
 - [Ben Orenstein](https://github.com/r00k/dotfiles)
 - [Ryan Bates](https://github.com/ryanb/dotfiles)
 - [Gabe Berke Williams](https://github.com/gabebw/dotfiles)
-- [Monica Dinculescu](https://github.com/notwaldorf/.not-quite-dotfiles)
 
 ## Installation
 
