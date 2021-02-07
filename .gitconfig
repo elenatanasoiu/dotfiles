@@ -5,3 +5,8 @@
     excludesfile = ~/.gitignore
 [color]
     ui = always
+[alias]
+    nuke     = reset --hard origin/master
+    tidy     = clean -fd .
+[github]
+    user = elenatanasoiu
