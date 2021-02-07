@@ -73,8 +73,8 @@ alias lock-pl='fligo lock -e playground futurelearn --create'
 alias cow="fortune | cowsay"
 
 # Docker
-alias prune-af="docker system prune -a -f" # clean everything
-alias docker-rm-all="docker rm -f $(docker images -aq)" # removes all images
+# alias prune-af="docker system prune -a -f" # clean everything
+# alias docker-rm-all="docker rm -f $(docker images -aq)" # removes all images
 
 # Vim
 # Install vim plugins via vundle
