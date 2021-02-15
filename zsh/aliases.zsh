@@ -68,6 +68,9 @@ alias minedns='open -a rubymine ~/projects/dns'
 alias minesq='open -a rubymine ~/projects/squiddy'
 alias minet='open -a rubymine ~/projects/terraform'
 
+# GoLand
+alias minego='open -a goland ~/projects/fligo'
+
 # FL shortcuts
 alias ffs='bundle install && bundle exec rake db:migrate && bundle exec rake db:test:prepare && yarn'
 alias lock-pl='fligo lock -e playground futurelearn --create'
