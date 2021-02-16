@@ -5,21 +5,23 @@
 alias be='bundle exec'
 alias dotfiles='cd ~/dotfiles'
 
-# foreman
+# fligo
 alias fart='fligo app start'
+alias fci='fligo actions runs ci.yaml -b $(git branch --show-current)'
+alias fdd='fligo deploy domain elena -b $(git branch --show-current)'
 
 # git
 alias amen='git commit --amend --no-edit'
 alias amend='git commit --amend'
+alias autosquash='git rebase -i --autosquash'
 alias fixup='git commit --fixup'
-alias fsquash='git rebase -i --autosquash'
 alias ga='git add'
 alias gb='git branch --sort=-committerdate'
 alias gc='git commit -v'
 alias gco='git checkout'
 alias gd='git diff'
-alias gpo='git push origin'
-alias gposu='git push --set-upstream origin'
+alias gpo='git push origin $(git branch --show-current)'
+alias gposu='git push --set-upstream origin $(git branch --show-current)'
 alias gs='git status'
 alias lcm='git log -1 --pretty=%B | pbcopy' # Get last commit message
 alias oops="git reset --hard HEAD"
@@ -29,7 +31,7 @@ alias uncommit='git reset --soft HEAD~1' # undo last commit
 alias wip='git add . && gc -m "WIP" --no-verify' # Create a wip commit
 
 # Git Log
-alias sla='git log --oneline --decorate --graph --all' # print log on one line, with graph and all branches
+alias lol='git log --oneline --decorate --graph --all' # print log on one line, with graph and all branches
 alias plog="git log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'" # print enhanced git log, with timestamp and prettified format
 alias glog='git log -E -i --grep' # search in commit messages in git log using regular expressions
 alias glogs='git log -S' # search the code committed in git log using regex
@@ -87,3 +89,5 @@ alias cow="fortune | cowsay"
 # Install vim plugins via vundle
 alias vundle="vim +PluginInstall +qall"
 
+# Turn screen recordings into gifs
+alias gif="ffmpeg -i ~/Desktop/in.mov -pix_fmt rgb8 -r 10 output.gif && gifsicle -O3 output.gif -o output.gif"
