@@ -33,6 +33,7 @@ ln -s ~/dotfiles/zsh/aliases.zsh ~/.zsh/aliases.zsh
 ln -s ~/dotfiles/zsh/history.zsh ~/.zsh/history.zsh
 ln -s ~/dotfiles/zsh/plugins.zsh ~/.zsh/plugins.zsh
 ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/zsh/elena.zsh-theme ~/.oh-my-zsh/custom/themes/elena.zsh-theme
 
 echo "Adding global gitignore"
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global

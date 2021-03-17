@@ -11,6 +11,7 @@ for file in "$BASE/$1"/*.zsh; do
 done
 
 ZSH_THEME="robbyrussell"
+test -f ~/.oh-my-zsh/custom/themes/elena.zsh-theme && ZSH_THEME="elena"
 
 # Chruby
 source /usr/local/share/chruby/chruby.sh
