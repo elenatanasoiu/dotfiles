@@ -80,6 +80,8 @@ alias release-pl='fligo lock futurelearn -e playground --release'
 
 # Life aliases
 alias cow="fortune | cowsay"
+alias joke="curl -s https://official-joke-api.appspot.com/random_joke | jq -r '.setup + \"\n\" + .punchline'"
+alias dadjoke="curl -s https://fatherhood.gov/jsonapi/node/dad_jokes | jq -r '.data[] | .attributes.field_joke_opener + \"\n\" + .attributes.field_joke_response'"
 
 # Docker
 # alias prune-af="docker system prune -a -f" # clean everything
