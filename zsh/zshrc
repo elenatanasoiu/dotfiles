@@ -34,4 +34,6 @@ export PATH=$GOPATH/bin:$PATH
 # Fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+. ~/.zshenv
+
 source $ZSH/oh-my-zsh.sh
