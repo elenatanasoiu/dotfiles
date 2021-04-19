@@ -52,6 +52,9 @@ brew install fzf
 echo "Install ripgrep to use with fzf"
 brew install ripgrep
 
+echo "Install gsed for mysql-colorize plugin"
+brew install gsed
+
 echo "Reloading zsh"
 source ~/.zshrc
 
