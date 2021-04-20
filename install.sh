@@ -55,6 +55,9 @@ brew install ripgrep
 echo "Install gsed for mysql-colorize plugin"
 brew install gsed
 
+echo "Install serverless for squiddy"
+curl -o- -L https://slss.io/install | zsh
+
 echo "Reloading zsh"
 source ~/.zshrc
 

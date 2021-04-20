@@ -36,4 +36,8 @@ export PATH=$GOPATH/bin:$PATH
 
 . ~/.zshenv
 
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
+
 source $ZSH/oh-my-zsh.sh
+
