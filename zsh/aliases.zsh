@@ -78,6 +78,7 @@ alias minego='open -a goland ~/projects/fligo'
 alias ffs='bundle install && bundle exec rake db:migrate && bundle exec rake db:test:prepare && yarn'
 alias lock-pl='fligo lock -e playground futurelearn --create'
 alias release-pl='fligo lock futurelearn -e playground --release'
+alias backlog='fligo card create -s backlog'
 
 # Life aliases
 alias cow="fortune | cowsay"
