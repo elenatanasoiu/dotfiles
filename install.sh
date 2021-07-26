@@ -58,6 +58,9 @@ brew install gsed
 echo "Install serverless for squiddy"
 curl -o- -L https://slss.io/install | zsh
 
+echo "Install asciinema"
+brew install asciinema
+
 echo "Reloading zsh"
 source ~/.zshrc
 
