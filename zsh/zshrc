@@ -15,7 +15,7 @@ test -f ~/.oh-my-zsh/custom/themes/elena.zsh-theme && ZSH_THEME="elena"
 
 # Chruby
 source /usr/local/share/chruby/chruby.sh
-chruby 2.6.2
+chruby 2.7.4
 
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
