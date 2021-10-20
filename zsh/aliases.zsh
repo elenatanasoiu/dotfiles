@@ -30,6 +30,7 @@ alias pickaxe="git log -p -S"
 alias skipgc='SKIP=RuboCop git commit -v' # Temporary skip rubocop harrassment during rebase
 alias uncommit='git reset --soft HEAD~1' # undo last commit
 alias wip='git add . && gc -m "WIP" --no-verify' # Create a wip commit
+alias branchboom='git branch --merged | grep -v \* | xargs git branch -D'
 
 # Git Log
 alias lol='git log --oneline --decorate --graph --all' # print log on one line, with graph and all branches
