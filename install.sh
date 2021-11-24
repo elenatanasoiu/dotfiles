@@ -21,7 +21,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 echo "Installing plugins for zsh"
 git clone https://github.com/MichaelAquilina/zsh-you-should-use.git "$ZSH_CUSTOM/plugins/you-should-use"
-git clone https://github.com/horosgrisa/mysql-colorize "$ZSH_CUSTOM/plugins/mysql-colorize"
 git clone https://github.com/amstrad/oh-my-matrix "$ZSH_CUSTOM/plugins/oh-my-matrix"
 
 echo "Linking dotfiles into ~..."
@@ -51,9 +50,6 @@ brew install fzf
 "$(brew --prefix)/opt/fzf/install"
 echo "Install ripgrep to use with fzf"
 brew install ripgrep
-
-echo "Install gsed for mysql-colorize plugin"
-brew install gsed
 
 echo "Install serverless for squiddy"
 curl -o- -L https://slss.io/install | zsh
