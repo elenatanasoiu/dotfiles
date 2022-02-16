@@ -64,17 +64,9 @@ alias rm="rm -iv"
 
 # Rubymine
 alias mine='open -a rubymine'
-alias mined='open -a rubymine ~/projects/deployment'
-alias mineds='open -a rubymine ~/projects/design-system'
-alias minef='open -a rubymine ~/projects/frontend'
-alias minefl='open -a rubymine ~/projects/futurelearn'
-alias minedns='open -a rubymine ~/projects/dns'
-alias minesq='open -a rubymine ~/projects/squiddy'
-alias minet='open -a rubymine ~/projects/terraform'
 
 # GoLand
 alias goland='open -a goland'
-alias gosquid='open -a goland ~/projects/squiddy-go'
 
 # FL shortcuts
 alias ffs='bundle install && bundle exec rake db:migrate && bundle exec rake db:test:prepare && yarn'
