@@ -1,63 +1,57 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-set -e
+# The full path to the directory containing this script
+# https://unix.stackexchange.com/a/76518
+DOTFILES_ROOT=$(exec 2>/dev/null;cd -- $(dirname "$0"); unset PWD; /usr/bin/pwd || /bin/pwd || pwd)
 
-echo "Installing homebrew"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# Helper function
+generic_install() {
+  (which brew > /dev/null && brew install "$1") || sudo apt install -o DPkg::Options::="--force-confnew" -y "$1"
+}
 
-echo "Installing zsh-syntax-highlighting..."
-brew install zsh-syntax-highlighting
+# Shell things
+if [ "$1" != "--no-install" ]; then
+  echo "Installing zsh..." 
+  which zsh || generic_install zsh
 
-echo "Installing tmux and tmuxinator"
-brew install tmux
-brew install tmuxinator
-tmuxinator doctor
+  echo "Installing oh-my-zsh..." 
+  if [[ ! -f ~/.oh-my-zsh/oh-my-zsh.sh ]]; then
+    if [[ -d ~/.oh-my-zsh ]]; then
+      rm -rf ~/.oh-my-zsh
+    fi
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+  fi
 
-echo "Install shellcheck"
-brew install shellcheck
+  if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  fi
 
-echo "Installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  echo "Done!"
+fi
 
-echo "Installing plugins for zsh"
-git clone https://github.com/MichaelAquilina/zsh-you-should-use.git "$ZSH_CUSTOM/plugins/you-should-use"
-git clone https://github.com/amstrad/oh-my-matrix "$ZSH_CUSTOM/plugins/oh-my-matrix"
+echo "Linking dotfiles into $HOME"
 
-echo "Linking dotfiles into ~..."
-cd ~
-ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
-mkdir ~/.zsh && cd .zsh
-ln -s ~/dotfiles/zsh/aliases.zsh ~/.zsh/aliases.zsh
-ln -s ~/dotfiles/zsh/history.zsh ~/.zsh/history.zsh
-ln -s ~/dotfiles/zsh/plugins.zsh ~/.zsh/plugins.zsh
-ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/zsh/elena.zsh-theme ~/.oh-my-zsh/custom/themes/elena.zsh-theme
+rm $HOME/.vimrc 
+ln -s $DOTFILES_ROOT/vim/vimrc $HOME/.vimrc
+printf "$DOTFILES_ROOT/vim/vimrc linked to $HOME/.vimrc\n"
 
-echo "Adding global gitignore"
-ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
-git config --global core.excludesfile ~/.gitignore_global
+ln -s $DOTFILES_ROOT/zshtheme/elena.zsh-theme $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme
+printf "$DOTFILES_ROOT/zshtheme/elena.zsh-theme linked to ~/.oh-my-zsh/custom/themes/elena.zsh-theme\n"
 
-echo "Installing tig"
-brew install tig
+rm $HOME/.zshrc 
+ln -s $DOTFILES_ROOT/zsh/zshrc $HOME/.zshrc
+printf "$DOTFILES_ROOT/zsh/zshrc linked to $HOME/.zshrc\n"
 
-echo "Install advice"
-brew install fortune
-brew install cowsay
+rm -rf $HOME/.zsh && mkdir $HOME/.zsh 
+cd $HOME/.zsh
+ln -s $DOTFILES_ROOT/zsh/aliases.zsh $HOME/.zsh/aliases.zsh
+ln -s $DOTFILES_ROOT/zsh/plugins.zsh $HOME/.zsh/plugins.zsh
+ln -s $DOTFILES_ROOT/zsh/zshenv $HOME/.zshenv
 
-echo "Install fuzzy finder"
-brew install fzf
-"$(brew --prefix)/opt/fzf/install"
-echo "Install ripgrep to use with fzf"
-brew install ripgrep
-
-echo "Install serverless for squiddy"
-curl -o- -L https://slss.io/install | zsh
-
-echo "Install asciinema"
-brew install asciinema
+echo "Run zsh"
+sudo chsh -s /usr/bin/zsh
 
 echo "Reloading zsh"
-source ~/.zshrc
+source $HOME/.zshrc
 
 echo "Done!"
