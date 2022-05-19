@@ -14,8 +14,9 @@ ZSH_THEME="robbyrussell"
 test -f ~/.oh-my-zsh/custom/themes/elena.zsh-theme && ZSH_THEME="elena"
 
 # Chruby
-source /usr/local/share/chruby/chruby.sh
-chruby 2.7.4
+source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
+source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.1.0
 
 # Yarn
 export PATH="$PATH:`yarn global bin`"
@@ -47,4 +48,3 @@ eval "$(pyenv init -)"
 export PATH="$HOME/.serverless/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
-
