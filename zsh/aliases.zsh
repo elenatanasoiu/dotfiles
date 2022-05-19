@@ -75,3 +75,10 @@ alias vundle="vim +PluginInstall +qall"
 
 # Turn screen recordings into gifs
 alias gif="ffmpeg -i ~/Desktop/in.mov -pix_fmt rgb8 -r 10 output.gif && gifsicle -O3 output.gif -o output.gif"
+
+# Codespaces
+alias ghcc="gh codespace-compose"
+alias ghccu="gh codespace-compose up"
+alias ghccd="gh codespace-compose down"
+alias ghccg="gh codespace-compose code github"
+alias ghcct="gh codespace-compose code turboscan"
