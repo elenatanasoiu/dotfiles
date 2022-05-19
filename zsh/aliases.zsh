@@ -5,11 +5,6 @@
 alias be='bundle exec'
 alias dotfiles='cd ~/dotfiles'
 
-# fligo
-alias fart='fligo app start'
-alias fci='fligo actions runs ci.yaml -b $(git branch --show-current)'
-alias fdd='fligo deploy domain elena -b $(git branch --show-current)'
-
 # git
 alias amen='git commit --amend --no-edit'
 alias amend='git commit --amend'
@@ -68,21 +63,11 @@ alias mine='open -a rubymine'
 # GoLand
 alias goland='open -a goland'
 
-# FL shortcuts
-alias ffs='bundle install && bundle exec rake db:migrate && bundle exec rake db:test:prepare && yarn'
-alias lock-pl='fligo lock -e playground futurelearn --create'
-alias release-pl='fligo lock futurelearn -e playground --release'
-alias backlog='fligo card create -s backlog'
-
 # Life aliases
 alias cow="fortune | cowsay"
 alias joke="curl -s https://official-joke-api.appspot.com/random_joke | jq -r '.setup + \"\n\" + .punchline'"
 alias dadjoke="curl -s https://fatherhood.gov/jsonapi/node/dad_jokes | jq -r '.data[] | .attributes.field_joke_opener + \"\n\" + .attributes.field_joke_response'"
 alias say-pickles="yes pickles | xargs say"
-
-# Docker
-# alias prune-af="docker system prune -a -f" # clean everything
-# alias docker-rm-all="docker rm -f $(docker images -aq)" # removes all images
 
 # Vim
 # Install vim plugins via vundle
