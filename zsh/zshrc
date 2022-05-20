@@ -13,10 +13,11 @@ done
 ZSH_THEME="robbyrussell"
 test -f $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme && ZSH_THEME="elena"
 
-# Chruby
-source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh
-source $(brew --prefix)/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.1.0
+# If rbenv is installed, ensure that it's in the path and initialised
+if [ -x "$(command -v rbenv)" ]; then
+  echo $PATH | grep rbenv >/dev/null || export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 . $HOME/.zshenv
 
