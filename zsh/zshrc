@@ -13,6 +13,18 @@ done
 ZSH_THEME="robbyrussell"
 test -f $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme && ZSH_THEME="elena"
 
+if [[ "$CODESPACES" = "true" ]]; then
+  if [ -z "$(git config --get core.editor)" ] && [ -z "${GIT_EDITOR}" ]; then
+    if  [ "${TERM_PROGRAM}" = "vscode" ]; then
+        if [[ -n $(command -v code-insiders) &&  -z $(command -v code) ]]; then
+            export GIT_EDITOR="code-insiders --wait"
+        else
+            export GIT_EDITOR="code --wait"
+        fi
+    fi
+  fi
+fi
+
 # If rbenv is installed, ensure that it's in the path and initialised
 if [ -x "$(command -v rbenv)" ]; then
   echo $PATH | grep rbenv >/dev/null || export PATH="$HOME/.rbenv/bin:$PATH"
