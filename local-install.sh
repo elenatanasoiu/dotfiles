@@ -57,6 +57,9 @@ curl -o- -L https://slss.io/install | zsh
 echo "Install asciinema"
 brew install asciinema
 
+echo "Install stretch.ly"
+brew install --cask stretchly
+
 echo "Reloading zsh"
 source ~/.zshrc
 
