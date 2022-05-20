@@ -4,6 +4,7 @@
 
 alias be='bundle exec'
 alias dotfiles='cd ~/dotfiles'
+alias cdotfiles='cd /workspaces/.codespaces/.persistedshare/dotfiles'
 
 # git
 alias amen='git commit --amend --no-edit'
