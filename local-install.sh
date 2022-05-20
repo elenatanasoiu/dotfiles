@@ -26,7 +26,7 @@ git clone https://github.com/amstrad/oh-my-matrix "$ZSH_CUSTOM/plugins/oh-my-mat
 echo "Linking dotfiles into ~..."
 cd ~
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
+ln -s ~/dotfiles/local/zshrc ~/.zshrc
 mkdir ~/.zsh && cd .zsh
 ln -s ~/dotfiles/zsh/aliases.zsh ~/.zsh/aliases.zsh
 ln -s ~/dotfiles/zsh/history.zsh ~/.zsh/history.zsh
