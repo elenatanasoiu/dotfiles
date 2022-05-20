@@ -24,4 +24,11 @@ to manage installing and removing plugins.
 
     $ git clone git@github.com:elenatanasoiu/dotfiles.git ~/.dotfiles
     $ cd ~/.dotfiles
+
+For local development:
+
+    $ ./local-install.sh
+    
+For codespaces:
+
     $ ./install.sh
