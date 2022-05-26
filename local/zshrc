@@ -47,4 +47,6 @@ eval "$(pyenv init -)"
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
 
+[ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
+
 source $ZSH/oh-my-zsh.sh

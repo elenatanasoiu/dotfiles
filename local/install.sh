@@ -19,22 +19,26 @@ brew install shellcheck
 echo "Installing oh-my-zsh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-echo "Installing plugins for zsh"
-git clone https://github.com/MichaelAquilina/zsh-you-should-use.git "$ZSH_CUSTOM/plugins/you-should-use"
-git clone https://github.com/amstrad/oh-my-matrix "$ZSH_CUSTOM/plugins/oh-my-matrix"
-
 echo "Linking dotfiles into ~..."
 cd ~
+rm ~/.vimrc
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+rm ~/.zshrc
 ln -s ~/dotfiles/local/zshrc ~/.zshrc
 mkdir ~/.zsh && cd .zsh
-ln -s ~/dotfiles/zsh/aliases.zsh ~/.zsh/aliases.zsh
-ln -s ~/dotfiles/zsh/history.zsh ~/.zsh/history.zsh
-ln -s ~/dotfiles/zsh/plugins.zsh ~/.zsh/plugins.zsh
-ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/zsh/elena.zsh-theme ~/.oh-my-zsh/custom/themes/elena.zsh-theme
+rm ~/.zsh/aliases.zsh
+ln -s ~/dotfiles/local/zsh/aliases.zsh ~/.zsh/aliases.zsh
+rm ~/.zsh/history.zsh
+ln -s ~/dotfiles/local/zsh/history.zsh ~/.zsh/history.zsh
+rm ~/.zsh/plugins.zsh
+ln -s ~/dotfiles/local/zsh/plugins.zsh ~/.zsh/plugins.zsh
+rm ~/.tmux.conf
+ln -s ~/dotfiles/local/tmux/tmux.conf ~/.tmux.conf
+rm ~/.oh-my-zsh/custom/themes/elena.zsh-theme
+ln -s ~/dotfiles/zshtheme/elena.zsh-theme ~/.oh-my-zsh/custom/themes/elena.zsh-theme
 
 echo "Adding global gitignore"
+rm ~/.gitignore_global
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
