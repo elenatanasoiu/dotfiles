@@ -28,6 +28,9 @@ alias uncommit='git reset --soft HEAD~1' # undo last commit
 alias wip='git add . && gc -m "WIP" --no-verify' # Create a wip commit
 alias branchboom='git branch --merged | grep -v \* | xargs git branch -D'
 
+# gh
+alias ghcompare='gh browse --branch $(git branch --show-current)'
+
 # Git Log
 alias lol='git log --oneline --decorate --graph --all' # print log on one line, with graph and all branches
 alias plog="git log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C(reset)] %s'" # print enhanced git log, with timestamp and prettified format
