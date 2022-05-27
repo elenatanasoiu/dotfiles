@@ -42,6 +42,12 @@ rm ~/.gitignore_global
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
+echo "Install vundle"
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+echo "Install vim plugins"
+vim +PluginInstall +qall
+
 echo "Installing tig"
 brew install tig
 

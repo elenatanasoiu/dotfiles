@@ -116,7 +116,7 @@ let g:lightline = {
       \           ]
       \ },
       \ 'component': {
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
+      \   'fugitive': '%{exists("*FugitiveHead")?FugitiveHead():""}',
       \   'emojipocalypse': '%{emoji#for("sparkles")}',
       \   'readonly': '%{(&filetype!="help" && &readonly) ? emoji#for("lock") : ""}',
       \ },
@@ -125,7 +125,7 @@ let g:lightline = {
       \ },
       \ 'component_visible_condition': {
       \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \   'fugitive': '(exists("*FugitiveHead") && ""!=FugitiveHead())'
       \ }
 \ }
 
