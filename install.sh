@@ -47,6 +47,14 @@ rm $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme
 ln -s $DOTFILES_ROOT/zshtheme/elena.zsh-theme $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme
 printf "$DOTFILES_ROOT/zshtheme/elena.zsh-theme linked to ~/.oh-my-zsh/custom/themes/elena.zsh-theme\n"
 
+echo "Adding global gitignore"
+rm $HOME/.gitignore_global
+ln -s $DOTFILES_ROOT/.gitignore_global $HOME/.gitignore_global
+git config --global core.excludesfile $HOME/.gitignore_global
+
+echo "Turn on GPG signing of commits"
+git config --global commit.gpgsign true
+
 echo "Install vundle"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 

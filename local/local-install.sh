@@ -48,6 +48,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 echo "Install vim plugins"
 vim +PluginInstall +qall
 
+echo "Turn on GPG signing of commits"
+git config --global commit.gpgsign true
+
 echo "Installing tig"
 brew install tig
 
