@@ -40,9 +40,6 @@ cd $HOME/.zsh
 ln -s $DOTFILES_ROOT/zsh/aliases.zsh $HOME/.zsh/aliases.zsh
 ln -s $DOTFILES_ROOT/zsh/plugins.zsh $HOME/.zsh/plugins.zsh
 
-echo "Run zsh"
-sudo chsh -s /usr/bin/zsh
-
 rm $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme
 ln -s $DOTFILES_ROOT/zshtheme/elena.zsh-theme $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme
 printf "$DOTFILES_ROOT/zshtheme/elena.zsh-theme linked to ~/.oh-my-zsh/custom/themes/elena.zsh-theme\n"
@@ -60,6 +57,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 echo "Install vim plugins"
 vim +PluginInstall +qall
+
+echo "Run zsh"
+exec zsh
 
 echo "Reloading zsh"
 source $HOME/.zshrc
