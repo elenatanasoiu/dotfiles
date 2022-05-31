@@ -21,8 +21,9 @@ chruby ruby-3.1.0
 # Yarn
 export PATH="$PATH:`yarn global bin`"
 
-# Nodenv
-eval "$(nodenv init -)"
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
