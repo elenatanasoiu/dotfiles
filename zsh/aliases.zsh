@@ -3,8 +3,11 @@
 ###########
 
 alias be='bundle exec'
-alias dotfiles='cd ~/dotfiles'
-alias cdotfiles='cd /workspaces/.codespaces/.persistedshare/dotfiles'
+alias dotfiles='cd /workspaces/.codespaces/.persistedshare/dotfiles'
+
+# Xclip - for codespaces
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
 
 # git
 alias amen='git commit --amend --no-edit'
@@ -41,10 +44,6 @@ alias gtree="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)
 # Lint
 alias lint='pre-commit run'
 
-# tmux
-alias mux='tmuxinator'
-alias muxkill='tmux kill-session'
-
 # Rails
 alias rc='rails console'
 alias rs='rails s'
@@ -53,7 +52,7 @@ alias rubo='bundle exec rubocop -a'
 alias rubodiff='git diff --name-only HEAD | xargs bundle exec rubocop -a'
 
 # Minitest
-alias bert='bundle exec rake test'
+alias brt='bin/rails test'
 
 # Make commands interactive
 alias cp="cp -iv"
@@ -61,32 +60,10 @@ alias ls="ls -FGh"
 alias mv="mv -iv"
 alias rm="rm -iv"
 
-# Rubymine
-alias mine='open -a rubymine'
-
-# GoLand
-alias goland='open -a goland'
-
 # Life aliases
 alias cow="fortune | cowsay"
 alias joke="curl -s https://official-joke-api.appspot.com/random_joke | jq -r '.setup + \"\n\" + .punchline'"
-alias dadjoke="curl -s https://fatherhood.gov/jsonapi/node/dad_jokes | jq -r '.data[] | .attributes.field_joke_opener + \"\n\" + .attributes.field_joke_response'"
-alias say-pickles="yes pickles | xargs say"
 
 # Vim
 # Install vim plugins via vundle
 alias vundle="vim +PluginInstall +qall"
-
-# Turn screen recordings into gifs
-alias gif="ffmpeg -i ~/Desktop/in.mov -pix_fmt rgb8 -r 10 output.gif && gifsicle -O3 output.gif -o output.gif"
-
-# Codespaces
-alias ghcc="gh codespace-compose"
-alias ghccu="gh codespace-compose up"
-alias ghccd="gh codespace-compose down"
-alias ghccg="gh codespace-compose code github"
-alias ghcct="gh codespace-compose code turboscan"
-
-# Xclip - for codespaces
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'

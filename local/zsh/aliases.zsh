@@ -4,7 +4,6 @@
 
 alias be='bundle exec'
 alias dotfiles='cd ~/dotfiles'
-alias cdotfiles='cd /workspaces/.codespaces/.persistedshare/dotfiles'
 
 # git
 alias amen='git commit --amend --no-edit'
@@ -53,7 +52,7 @@ alias rubo='bundle exec rubocop -a'
 alias rubodiff='git diff --name-only HEAD | xargs bundle exec rubocop -a'
 
 # Minitest
-alias bert='bundle exec rake test'
+alias brt='bin/rails test'
 
 # Make commands interactive
 alias cp="cp -iv"
