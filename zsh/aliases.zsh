@@ -86,3 +86,7 @@ alias ghccu="gh codespace-compose up"
 alias ghccd="gh codespace-compose down"
 alias ghccg="gh codespace-compose code github"
 alias ghcct="gh codespace-compose code turboscan"
+
+# Xclip - for codespaces
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'

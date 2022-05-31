@@ -52,6 +52,9 @@ git config --global core.excludesfile $HOME/.gitignore_global
 echo "Turn on GPG signing of commits"
 git config --global commit.gpgsign true
 
+echo "Install xclip xsel"
+sudo apt install xclip xsel
+
 echo "Install vundle"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
