@@ -61,8 +61,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 echo "Install vim plugins"
 vim +PluginInstall +qall
 
-echo "Run zsh"
-exec zsh
+echo "Installing tig"
+brew install tig
 
 echo "Reloading zsh"
 source $HOME/.zshrc
