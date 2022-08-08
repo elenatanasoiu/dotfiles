@@ -53,6 +53,8 @@ git config --global commit.gpgsign true
 
 echo "Installing tig"
 brew install tig
+ln ../tig/.tigrc.large ~/.tigrc.large
+echo "source ~/.tigrc.large" >> ~/.tigrc
 
 echo "Install advice"
 brew install fortune

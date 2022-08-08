@@ -63,6 +63,8 @@ vim +PluginInstall +qall
 
 echo "Installing tig"
 brew install tig
+cp tig/.tigrc.large ~/.tigrc.large
+echo "source ~/.tigrc.large" >> ~/.tigrc
 
 echo "Reloading zsh"
 source $HOME/.zshrc

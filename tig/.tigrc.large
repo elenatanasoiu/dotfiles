@@ -1,0 +1,23 @@
+# Settings for speeding up Tig in large repositories
+#
+# To use these settings copy the file to your HOME directory and include
+# it from your ~/.tigrc file:
+#
+#	$ ln tig/.tigrc.large ~/.tigrc.large
+#	$ echo "source ~/.tigrc.large" >> ~/.tigrc
+
+# Use Git's default (reverse chronological) order, never automatically
+# use topo-order for the commit graph
+set commit-order = default
+
+# Limit number of commits loaded by default to 1000
+set main-options = -n 50
+
+# Don't show staged and unstaged changes in the main view
+# set show-changes = no
+
+# Smaller main-view
+set main-view = line-number:no,interval=5 id:no date:default author:full,width=20 commit-title:yes,refs,overflow=no
+
+# Optionally, use the old and faster but less acurate graph renderer
+# set main-view-commit-title-graph = v1
