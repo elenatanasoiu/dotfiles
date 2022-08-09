@@ -67,3 +67,7 @@ alias joke="curl -s https://official-joke-api.appspot.com/random_joke | jq -r '.
 # Vim
 # Install vim plugins via vundle
 alias vundle="vim +PluginInstall +qall"
+
+# GPG
+alias disable-gpg="git config commit.gpgsign false"
+alias enable-gpg="git config commit.gpgsign true"
