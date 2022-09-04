@@ -62,9 +62,9 @@ echo "Install vim plugins"
 vim +PluginInstall +qall
 
 echo "Installing tig"
-brew install tig
-cp tig/.tigrc.large ~/.tigrc.large
-echo "source ~/.tigrc.large" >> ~/.tigrc
+sudo apt-get install tig -y
+cp $DOTFILES_ROOT/tig/.tigrc.large $HOME/.tigrc.large
+echo "source $HOME/.tigrc.large" >> $HOME/.tigrc
 
 echo "Reloading zsh"
 source $HOME/.zshrc
