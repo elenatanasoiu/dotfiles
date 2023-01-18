@@ -10,3 +10,5 @@
     tidy     = clean -fd .
 [github]
     user = elenatanasoiu
+[commit]
+    gpgsign = true
