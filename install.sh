@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# The full path to the directory containing this script
-# https://unix.stackexchange.com/a/76518
 DOTFILES_ROOT=$(exec 2>/dev/null;cd -- $(dirname "$0"); unset PWD; /usr/bin/pwd || /bin/pwd || pwd)
 
 # Helper function
@@ -26,27 +24,24 @@ if [[ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]]
 fi
 
 echo "Linking dotfiles into $HOME"
+rm -rf $HOME/.zsh && mkdir $HOME/.zsh
 
-rm $HOME/.vimrc 
-ln -s $DOTFILES_ROOT/vim/vimrc $HOME/.vimrc
-printf "$DOTFILES_ROOT/vim/vimrc linked to $HOME/.vimrc\n"
+create_symlinks() {
+    source_files=("vim/vimrc" "zsh/zshrc" "zsh/aliases.zsh" "zsh/history.zsh" "zshtheme/elena.zsh-theme" ".gitignore_global")
+    destination_files=(".vimrc" ".zshrc" ".zsh/aliases.zsh" ".zsh/history.zsh" ".oh-my-zsh/custom/themes/elena.zsh-theme" ".gitignore_global")
 
-rm $HOME/.zshrc
-ln -s $DOTFILES_ROOT/zsh/zshrc $HOME/.zshrc
-printf "$DOTFILES_ROOT/zsh/zshrc linked to $HOME/.zshrc\n"
+    for i in $source_files; do
+        source=$(basename ${source_files[$i]})
+        destination=$(basename ${destination_files[$i]})
+        rm "$HOME/$destination"
+        ln -s "$DOTFILES_ROOT/$source $HOME/$destination"
+        echo "$DOTFILES_ROOT/$source linked to $HOME/$destination.\n"
+    done
+}
 
-rm -rf $HOME/.zsh && mkdir $HOME/.zsh 
-cd $HOME/.zsh
-ln -s $DOTFILES_ROOT/zsh/aliases.zsh $HOME/.zsh/aliases.zsh
-ln -s $DOTFILES_ROOT/zsh/plugins.zsh $HOME/.zsh/plugins.zsh
-
-rm $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme
-ln -s $DOTFILES_ROOT/zshtheme/elena.zsh-theme $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme
-printf "$DOTFILES_ROOT/zshtheme/elena.zsh-theme linked to ~/.oh-my-zsh/custom/themes/elena.zsh-theme\n"
+create_symlinks
 
 echo "Adding global gitignore"
-rm $HOME/.gitignore_global
-ln -s $DOTFILES_ROOT/.gitignore_global $HOME/.gitignore_global
 git config --global core.excludesfile $HOME/.gitignore_global
 
 echo "Turn on GPG signing of commits"
