@@ -66,6 +66,9 @@ alias mine='open -a rubymine'
 # GoLand
 alias goland='open -a goland'
 
+# VSCod
+alias vscod='code .'
+
 # Life aliases
 alias cow="fortune | cowsay"
 alias joke="curl -s https://official-joke-api.appspot.com/random_joke | jq -r '.setup + \"\n\" + .punchline'"
