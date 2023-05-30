@@ -62,6 +62,7 @@ alias rm="rm -iv"
 
 # Rubymine
 alias mine='open -a rubymine'
+alias idea='open -a "IntelliJ IDEA.app"'
 
 # GoLand
 alias goland='open -a goland'
