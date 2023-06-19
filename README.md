@@ -11,8 +11,6 @@
 the [vim-update-bundle](https://github.com/bronson/vim-update-bundles) ruby script
 to manage installing and removing plugins.
 
-- Git - Git for version control
-
 ## Inspiration
 
 - [Chris Toomey](https://github.com/christoomey/dotfiles)
