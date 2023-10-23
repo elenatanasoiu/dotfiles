@@ -30,3 +30,4 @@ For local development:
 For codespaces:
 
     $ ./install.sh
+
