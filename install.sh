@@ -66,6 +66,10 @@ sudo apt-get install tig -y
 cp $DOTFILES_ROOT/tig/.tigrc.large $HOME/.tigrc.large
 echo "source $HOME/.tigrc.large" >> $HOME/.tigrc
 
+echo "Install fuzzy finder"
+brew install fzf
+"$(brew --prefix)/opt/fzf/install"
+
 echo "Reloading zsh"
 source $HOME/.zshrc
 

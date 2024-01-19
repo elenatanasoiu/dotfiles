@@ -25,6 +25,9 @@ if [[ "$CODESPACES" = "true" ]]; then
   fi
 fi
 
+# Fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # If rbenv is installed, ensure that it's in the path and initialised
 if [ -x "$(command -v rbenv)" ]; then
   echo $PATH | grep rbenv >/dev/null || export PATH="$HOME/.rbenv/bin:$PATH"
