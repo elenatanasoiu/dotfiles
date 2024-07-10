@@ -1,4 +1,4 @@
-# Elena's Dotfiles
+# Elena's Dotfile
 
 💰 NO JUDGING
 
