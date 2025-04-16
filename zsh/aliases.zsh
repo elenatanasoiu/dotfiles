@@ -71,3 +71,8 @@ alias vundle="vim +PluginInstall +qall"
 # GPG
 alias disable-gpg="git config commit.gpgsign false"
 alias enable-gpg="git config commit.gpgsign true"
+
+# Copilot
+# add an alias to talk to gh models run gpt-4o
+alias copilot-gpt-4o="gh copilot query --model gpt-4o --interactive"
+alias models-gpt-4o="gh copilot models run gpt-4o"
