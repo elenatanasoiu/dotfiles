@@ -89,3 +89,6 @@ alias ghccu="gh codespace-compose up"
 alias ghccd="gh codespace-compose down"
 alias ghccg="gh codespace-compose code github"
 alias ghcct="gh codespace-compose code turboscan"
+
+# Tailscale
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
