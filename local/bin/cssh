@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Get the codespace name
+codespace_name=$(gh codespace list --json name --jq '.[0].name')
+
+if [ -z "$codespace_name" ]; then
+  echo "No codespaces found"
+  exit 1
+fi
+
+# Forward the SSH config
+gh codespace ssh --codespace "$codespace_name" -- "$@"

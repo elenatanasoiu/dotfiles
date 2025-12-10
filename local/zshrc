@@ -55,3 +55,15 @@ export PATH="$HOME/.serverless/bin:$PATH"
 
 # Reload
 source $ZSH/oh-my-zsh.sh
+export JETBRAINS_LICENSE_SERVER=https://github.jetbrains-ide-services.com
+
+# Auto-update codespace SSH config so it can be accessed by other code editors
+if command -v gh >/dev/null 2>&1; then
+  if gh codespace list --json name --jq '.[0].name' >/dev/null 2>&1; then
+    config_file="$HOME/.ssh/codespaces_config"
+    # Update if config doesn't exist or is older than 1 hour
+    if [ ! -f "$config_file" ] || [ -n "$(find "$config_file" -mmin +60 2>/dev/null)" ]; then
+      (cssh-config >/dev/null 2>&1 &)
+    fi
+  fi
+fi

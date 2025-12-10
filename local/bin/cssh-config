@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Generate SSH config for all codespaces
+gh codespace ssh --config > ~/.ssh/codespaces_config
+
+# Ensure it's included in main SSH config
+if ! grep -q "Include.*codespaces_config" ~/.ssh/config 2>/dev/null; then
+  echo -e "\n# Codespaces SSH config\nInclude ~/.ssh/codespaces_config\n" >> ~/.ssh/config
+  echo "Added codespaces config to ~/.ssh/config"
+else
+  echo "Codespaces config already included in ~/.ssh/config"
+fi
+
+# Add keep-alive settings if not present
+if ! grep -q "Host \*.github.dev" ~/.ssh/config 2>/dev/null; then
+  cat >> ~/.ssh/config <<EOF
+
+# Keep codespace connections alive
+Host *.github.dev
+  ServerAliveInterval 60
+  ServerAliveCountMax 5
+EOF
+  echo "Added keep-alive settings for codespaces"
+fi
+
+echo "SSH config updated. You can now connect to your active codespaces using Remote SSH"
