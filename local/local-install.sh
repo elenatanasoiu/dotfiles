@@ -75,6 +75,10 @@ brew install asciinema
 echo "Install stretch.ly"
 brew install --cask stretchly
 
+echo "Setting screenshot location to ~/Screenshots"
+mkdir -p ~/Screenshots
+defaults write com.apple.screencapture location "~/Screenshots"
+
 echo "Reloading zsh"
 source ~/.zshrc
 

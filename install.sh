@@ -27,7 +27,7 @@ fi
 
 echo "Linking dotfiles into $HOME"
 
-rm $HOME/.vimrc 
+rm $HOME/.vimrc
 ln -s $DOTFILES_ROOT/vim/vimrc $HOME/.vimrc
 printf "$DOTFILES_ROOT/vim/vimrc linked to $HOME/.vimrc\n"
 
@@ -35,7 +35,7 @@ rm $HOME/.zshrc
 ln -s $DOTFILES_ROOT/zsh/zshrc $HOME/.zshrc
 printf "$DOTFILES_ROOT/zsh/zshrc linked to $HOME/.zshrc\n"
 
-rm -rf $HOME/.zsh && mkdir $HOME/.zsh 
+rm -rf $HOME/.zsh && mkdir $HOME/.zsh
 cd $HOME/.zsh
 ln -s $DOTFILES_ROOT/zsh/aliases.zsh $HOME/.zsh/aliases.zsh
 ln -s $DOTFILES_ROOT/zsh/plugins.zsh $HOME/.zsh/plugins.zsh
