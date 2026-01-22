@@ -21,24 +21,24 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 echo "Linking dotfiles into ~..."
 cd ~
-rm ~/.vimrc
+rm -f ~/.vimrc
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-rm ~/.zshrc
+rm -f ~/.zshrc
 ln -s ~/dotfiles/local/zshrc ~/.zshrc
-mkdir ~/.zsh && cd .zsh
-rm ~/.zsh/aliases.zsh
+mkdir -p ~/.zsh && cd .zsh
+rm -f ~/.zsh/aliases.zsh
 ln -s ~/dotfiles/local/zsh/aliases.zsh ~/.zsh/aliases.zsh
-rm ~/.zsh/history.zsh
+rm -f ~/.zsh/history.zsh
 ln -s ~/dotfiles/local/zsh/history.zsh ~/.zsh/history.zsh
-rm ~/.zsh/plugins.zsh
+rm -f ~/.zsh/plugins.zsh
 ln -s ~/dotfiles/local/zsh/plugins.zsh ~/.zsh/plugins.zsh
-rm ~/.tmux.conf
+rm -f ~/.tmux.conf
 ln -s ~/dotfiles/local/tmux/tmux.conf ~/.tmux.conf
-rm ~/.oh-my-zsh/custom/themes/elena.zsh-theme
+rm -f ~/.oh-my-zsh/custom/themes/elena.zsh-theme
 ln -s ~/dotfiles/zshtheme/elena.zsh-theme ~/.oh-my-zsh/custom/themes/elena.zsh-theme
 
 echo "Adding global gitignore"
-rm ~/.gitignore_global
+rm -f ~/.gitignore_global
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 

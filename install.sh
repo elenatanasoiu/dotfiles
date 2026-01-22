@@ -27,11 +27,11 @@ fi
 
 echo "Linking dotfiles into $HOME"
 
-rm $HOME/.vimrc
+rm -f $HOME/.vimrc
 ln -s $DOTFILES_ROOT/vim/vimrc $HOME/.vimrc
 printf "$DOTFILES_ROOT/vim/vimrc linked to $HOME/.vimrc\n"
 
-rm $HOME/.zshrc
+rm -f $HOME/.zshrc
 ln -s $DOTFILES_ROOT/zsh/zshrc $HOME/.zshrc
 printf "$DOTFILES_ROOT/zsh/zshrc linked to $HOME/.zshrc\n"
 
@@ -40,12 +40,12 @@ cd $HOME/.zsh
 ln -s $DOTFILES_ROOT/zsh/aliases.zsh $HOME/.zsh/aliases.zsh
 ln -s $DOTFILES_ROOT/zsh/plugins.zsh $HOME/.zsh/plugins.zsh
 
-rm $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme
+rm -f $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme
 ln -s $DOTFILES_ROOT/zshtheme/elena.zsh-theme $HOME/.oh-my-zsh/custom/themes/elena.zsh-theme
 printf "$DOTFILES_ROOT/zshtheme/elena.zsh-theme linked to ~/.oh-my-zsh/custom/themes/elena.zsh-theme\n"
 
 echo "Adding global gitignore"
-rm $HOME/.gitignore_global
+rm -f $HOME/.gitignore_global
 ln -s $DOTFILES_ROOT/.gitignore_global $HOME/.gitignore_global
 git config --global core.excludesfile $HOME/.gitignore_global
 
