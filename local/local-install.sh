@@ -2,6 +2,9 @@
 
 set -e
 
+# The full path to the directory containing this script
+DOTFILES_ROOT=$(cd -- "$(dirname "$0")/.." && pwd)
+
 echo "Installing homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
@@ -22,24 +25,24 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 echo "Linking dotfiles into ~..."
 cd ~
 rm -f ~/.vimrc
-ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+ln -s $DOTFILES_ROOT/vim/vimrc ~/.vimrc
 rm -f ~/.zshrc
-ln -s ~/dotfiles/local/zshrc ~/.zshrc
+ln -s $DOTFILES_ROOT/local/zshrc ~/.zshrc
 mkdir -p ~/.zsh && cd .zsh
 rm -f ~/.zsh/aliases.zsh
-ln -s ~/dotfiles/local/zsh/aliases.zsh ~/.zsh/aliases.zsh
+ln -s $DOTFILES_ROOT/local/zsh/aliases.zsh ~/.zsh/aliases.zsh
 rm -f ~/.zsh/history.zsh
-ln -s ~/dotfiles/local/zsh/history.zsh ~/.zsh/history.zsh
+ln -s $DOTFILES_ROOT/local/zsh/history.zsh ~/.zsh/history.zsh
 rm -f ~/.zsh/plugins.zsh
-ln -s ~/dotfiles/local/zsh/plugins.zsh ~/.zsh/plugins.zsh
+ln -s $DOTFILES_ROOT/local/zsh/plugins.zsh ~/.zsh/plugins.zsh
 rm -f ~/.tmux.conf
-ln -s ~/dotfiles/local/tmux/tmux.conf ~/.tmux.conf
+ln -s $DOTFILES_ROOT/local/tmux/tmux.conf ~/.tmux.conf
 rm -f ~/.oh-my-zsh/custom/themes/elena.zsh-theme
-ln -s ~/dotfiles/zshtheme/elena.zsh-theme ~/.oh-my-zsh/custom/themes/elena.zsh-theme
+ln -s $DOTFILES_ROOT/zshtheme/elena.zsh-theme ~/.oh-my-zsh/custom/themes/elena.zsh-theme
 
 echo "Adding global gitignore"
 rm -f ~/.gitignore_global
-ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
+ln -s $DOTFILES_ROOT/.gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
 echo "Install vundle"
@@ -53,7 +56,7 @@ git config --global commit.gpgsign true
 
 echo "Installing tig"
 brew install tig
-ln ../tig/.tigrc.large ~/.tigrc.large
+ln -sf $DOTFILES_ROOT/tig/.tigrc.large ~/.tigrc.large
 echo "source ~/.tigrc.large" >> ~/.tigrc
 
 echo "Install advice"
