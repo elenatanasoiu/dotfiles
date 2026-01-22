@@ -36,7 +36,7 @@ ln -s $DOTFILES_ROOT/local/zsh/history.zsh ~/.zsh/history.zsh
 rm -f ~/.zsh/plugins.zsh
 ln -s $DOTFILES_ROOT/local/zsh/plugins.zsh ~/.zsh/plugins.zsh
 rm -f ~/.tmux.conf
-ln -s $DOTFILES_ROOT/local/tmux/tmux.conf ~/.tmux.conf
+ln -s $DOTFILES_ROOT/tmux/tmux.conf ~/.tmux.conf
 rm -f ~/.oh-my-zsh/custom/themes/elena.zsh-theme
 ln -s $DOTFILES_ROOT/zshtheme/elena.zsh-theme ~/.oh-my-zsh/custom/themes/elena.zsh-theme
 
