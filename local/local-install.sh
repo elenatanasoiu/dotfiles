@@ -46,7 +46,11 @@ ln -s $DOTFILES_ROOT/.gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
 echo "Install vundle"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [[ ! -d ~/.vim/bundle/Vundle.vim ]]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+else
+  echo "Vundle already installed, skipping"
+fi
 
 echo "Install vim plugins"
 vim +PluginInstall +qall
@@ -57,7 +61,10 @@ git config --global commit.gpgsign true
 echo "Installing tig"
 brew install tig
 ln -sf $DOTFILES_ROOT/tig/.tigrc.large ~/.tigrc.large
-echo "source ~/.tigrc.large" >> ~/.tigrc
+# Only append to .tigrc if not already sourced
+if [[ ! -f ~/.tigrc ]] || ! grep -q "source ~/.tigrc.large" ~/.tigrc; then
+  echo "source ~/.tigrc.large" >> ~/.tigrc
+fi
 
 echo "Install advice"
 brew install fortune

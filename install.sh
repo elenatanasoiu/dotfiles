@@ -56,7 +56,11 @@ echo "Install xclip xsel"
 sudo apt install xclip xsel
 
 echo "Install vundle"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [[ ! -d ~/.vim/bundle/Vundle.vim ]]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+else
+  echo "Vundle already installed, skipping"
+fi
 
 echo "Install vim plugins"
 vim +PluginInstall +qall
@@ -64,7 +68,10 @@ vim +PluginInstall +qall
 echo "Installing tig"
 sudo apt-get install tig -y
 cp $DOTFILES_ROOT/tig/.tigrc.large $HOME/.tigrc.large
-echo "source $HOME/.tigrc.large" >> $HOME/.tigrc
+# Only append to .tigrc if not already sourced
+if [[ ! -f $HOME/.tigrc ]] || ! grep -q "source $HOME/.tigrc.large" $HOME/.tigrc; then
+  echo "source $HOME/.tigrc.large" >> $HOME/.tigrc
+fi
 
 echo "Install fuzzy finder"
 brew install fzf
