@@ -1,0 +1,36 @@
+# Start with: mux pi
+# Or: tmuxinator start pi
+
+name: pi
+root: ~/projects
+
+windows:
+  # Window 1: Main pi agent session
+  - main:
+      root: ~/projects
+      panes:
+        - pi
+
+  # Window 2: Second pi agent (for parallel work)
+  - agent-2:
+      root: ~/projects
+      panes:
+        - pi
+
+  # Window 3: Third pi agent
+  - agent-3:
+      root: ~/projects
+      panes:
+        - pi
+
+  # Window 4: Dashboard / monitoring
+  - dashboard:
+      root: ~/projects
+      panes:
+        - # empty shell for running commands, viewing autoresearch dashboards, etc.
+
+  # Window 5: General shell
+  - shell:
+      root: ~/projects
+      panes:
+        -
