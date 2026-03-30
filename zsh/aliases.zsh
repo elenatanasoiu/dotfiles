@@ -24,12 +24,8 @@ alias gpo='git push origin $(git branch --show-current)'
 alias gposu='git push --set-upstream origin $(git branch --show-current)'
 alias gs='git status'
 alias lcm='git log -1 --pretty=%B | pbcopy' # Get last commit message
-alias oops="git reset --hard HEAD"
-alias pickaxe="git log -p -S"
-alias skipgc='SKIP=RuboCop git commit -v' # Temporary skip rubocop harrassment during rebase
-alias uncommit='git reset --soft HEAD~1' # undo last commit
 alias wip='git add . && gc -m "WIP" --no-verify' # Create a wip commit
-alias branchboom='git branch --merged | grep -v \* | xargs git branch -D'
+alias uncommit='git reset --soft HEAD~1' # undo last commit
 
 # gh
 alias ghcompare='gh browse --branch $(git branch --show-current)'
@@ -40,16 +36,6 @@ alias plog="git log --pretty=format:'%C(yellow)%h%C(reset) - %an [%C(green)%ar%C
 alias glog='git log -E -i --grep' # search in commit messages in git log using regular expressions
 alias glogs='git log -S' # search the code committed in git log using regex
 alias gtree="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
-
-# Lint
-alias lint='pre-commit run'
-
-# Rails
-alias rc='rails console'
-alias rs='rails s'
-alias rubo='bundle exec rubocop -a'
-# Run Rubocop with autocorrect only on staged changes
-alias rubodiff='git diff --name-only HEAD | xargs bundle exec rubocop -a'
 
 # Minitest
 alias brt='bin/rails test'
@@ -72,7 +58,5 @@ alias vundle="vim +PluginInstall +qall"
 alias disable-gpg="git config commit.gpgsign false"
 alias enable-gpg="git config commit.gpgsign true"
 
-# Copilot
-# add an alias to talk to gh models run gpt-4o
-alias copilot-gpt-4o="gh copilot query --model gpt-4o --interactive"
-alias models-gpt-4o="gh copilot models run gpt-4o"
+# Activity Tracker
+alias tracker='cd ~/projects/perf-harness/activity-tracker && PORT=3333 bin/dev'
