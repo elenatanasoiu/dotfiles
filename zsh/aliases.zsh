@@ -59,4 +59,4 @@ alias disable-gpg="git config commit.gpgsign false"
 alias enable-gpg="git config commit.gpgsign true"
 
 # Activity Tracker
-alias tracker='cd ~/projects/perf-harness/activity-tracker && PORT=3333 bin/dev'
+alias tracker='cd ~/projects/perf-harness/activity-tracker && source /opt/homebrew/share/chruby/chruby.sh && source /opt/homebrew/share/chruby/auto.sh && PORT=3333 bin/dev'
