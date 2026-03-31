@@ -92,3 +92,19 @@ alias ghcct="gh codespace-compose code turboscan"
 
 # Tailscale
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
+# Activity Tracker
+alias tracker='lsof -ti:3333 | xargs kill -9 2>/dev/null; cd ~/projects/workbench/activity-tracker && chruby ruby-3.4.9 && open http://localhost:3333 && PORT=3333 bin/dev'
+
+# Personal Website
+alias website='lsof -ti:4321 | xargs kill -9 2>/dev/null; cd ~/projects/elenatanasoiu.github.io && open http://localhost:4321 && npm run dev'
+
+# Copilot Coach
+alias checkin='lsof -ti:3100 | xargs kill -9 2>/dev/null; cd ~/projects/workbench/copilot-coach && chruby ruby-3.4.9 && open http://localhost:3100/check_ins/new && PORT=3100 bin/dev'
+alias coach='open https://copilot-coach-elena.fly.dev'
+
+# Vacation Planner
+alias vacations='open https://vacation-planner-elena.fly.dev'
+
+# Dashboard
+alias dashboard='open https://elena-dashboard.fly.dev'
