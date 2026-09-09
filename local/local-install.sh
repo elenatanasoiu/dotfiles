@@ -59,6 +59,26 @@ do
   fi
 done
 
+echo "Installing GitHub Copilot skills"
+skills add microsoft/GitHub-Copilot-for-Azure \
+  --global \
+  --agent github-copilot \
+  --skill '*' \
+  --full-depth \
+  --yes
+skills add JuliusBrussee/caveman \
+  --global \
+  --agent github-copilot \
+  --skill caveman caveman-commit caveman-compress caveman-help caveman-review compress \
+  --full-depth \
+  --yes
+skills add vercel-labs/skills \
+  --global \
+  --agent github-copilot \
+  --skill find-skills \
+  --full-depth \
+  --yes
+
 echo "Installing zsh-syntax-highlighting..."
 brew install zsh-syntax-highlighting
 
