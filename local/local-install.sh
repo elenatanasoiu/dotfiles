@@ -187,7 +187,7 @@ echo "Install ripgrep to use with fzf"
 brew install ripgrep
 
 echo "Install serverless for squiddy"
-curl -o- -L https://slss.io/install | zsh
+npm install --global serverless@3.38.0
 
 echo "Install asciinema"
 brew install asciinema
