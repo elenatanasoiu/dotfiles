@@ -192,9 +192,6 @@ npm install --global serverless@4.41.1
 echo "Install asciinema"
 brew install asciinema
 
-echo "Install stretch.ly"
-brew install --cask stretchly
-
 echo "Setting screenshot location to ~/Screenshots"
 mkdir -p ~/Screenshots
 defaults write com.apple.screencapture location "$HOME/Screenshots"
