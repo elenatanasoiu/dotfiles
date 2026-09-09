@@ -21,12 +21,14 @@ chruby ruby-3.3.0
 # Yarn (cached path — run `yarn global bin` to verify if yarn moves)
 export PATH="$PATH:$HOME/.yarn/bin"
 
-# NVM (lazy-loaded — saves ~550ms, initializes on first nvm/node/npm call)
+# NVM (lazy-loaded, saves ~550ms and initializes on first Node.js CLI call)
 export NVM_DIR="$HOME/.nvm"
-nvm() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; nvm "$@"; }
-node() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; node "$@"; }
-npm() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npm "$@"; }
-npx() { unset -f nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npx "$@"; }
+nvm() { unset -f nvm node npm npx copilot skills; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; nvm "$@"; }
+node() { unset -f nvm node npm npx copilot skills; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; node "$@"; }
+npm() { unset -f nvm node npm npx copilot skills; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npm "$@"; }
+npx() { unset -f nvm node npm npx copilot skills; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npx "$@"; }
+copilot() { unset -f nvm node npm npx copilot skills; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; copilot "$@"; }
+skills() { unset -f nvm node npm npx copilot skills; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; skills "$@"; }
 
 FPATH=/opt/homebrew/share/zsh/site-functions:$FPATH
 
