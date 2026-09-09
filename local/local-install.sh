@@ -84,7 +84,25 @@ echo "Installing GitHub Copilot skills"
 skills add microsoft/GitHub-Copilot-for-Azure \
   --global \
   --agent github-copilot \
-  --skill '*' \
+  --skill \
+    appinsights-instrumentation \
+    azure-ai \
+    azure-aigateway \
+    azure-cloud-migrate \
+    azure-compliance \
+    azure-compute \
+    azure-cost \
+    azure-deploy \
+    azure-diagnostics \
+    azure-kusto \
+    azure-messaging \
+    azure-prepare \
+    azure-resource-lookup \
+    azure-resource-visualizer \
+    azure-storage \
+    azure-validate \
+    entra-app-registration \
+    microsoft-foundry \
   --full-depth \
   --yes
 skills add JuliusBrussee/caveman \
