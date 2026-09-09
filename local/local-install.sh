@@ -116,13 +116,12 @@ rm -f ~/.vimrc
 ln -s $DOTFILES_ROOT/vim/vimrc ~/.vimrc
 rm -f ~/.zshrc
 ln -s $DOTFILES_ROOT/local/zshrc ~/.zshrc
-mkdir -p ~/.zsh && cd .zsh
-rm -f ~/.zsh/aliases.zsh
-ln -s $DOTFILES_ROOT/local/zsh/aliases.zsh ~/.zsh/aliases.zsh
-rm -f ~/.zsh/history.zsh
-ln -s $DOTFILES_ROOT/local/zsh/history.zsh ~/.zsh/history.zsh
-rm -f ~/.zsh/plugins.zsh
-ln -s $DOTFILES_ROOT/local/zsh/plugins.zsh ~/.zsh/plugins.zsh
+mkdir -p ~/.zsh
+for fragment in aliases history homebrew plugins tmux tmuxinator
+do
+  rm -f "$HOME/.zsh/$fragment.zsh"
+  ln -s "$DOTFILES_ROOT/local/zsh/$fragment.zsh" "$HOME/.zsh/$fragment.zsh"
+done
 rm -f ~/.tmux.conf
 ln -s $DOTFILES_ROOT/tmux/tmux.conf ~/.tmux.conf
 rm -f ~/.oh-my-zsh/custom/themes/elena.zsh-theme

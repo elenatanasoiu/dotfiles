@@ -7,11 +7,11 @@ is_osx(){
 }
 
 if is_osx; then
-  # Opt out of sending Homebrew information to Google Analytics
-  # https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
   export HOMEBREW_NO_ANALYTICS=1
 
-  HOMEBREW_PREFIX=/usr/local
-  PATH=$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH
-  unset HOMEBREW_PREFIX
+  if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
 fi
