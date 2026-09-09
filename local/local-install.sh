@@ -108,7 +108,7 @@ skills add microsoft/GitHub-Copilot-for-Azure \
 skills add JuliusBrussee/caveman \
   --global \
   --agent github-copilot \
-  --skill caveman caveman-commit caveman-compress caveman-help caveman-review compress \
+  --skill caveman caveman-commit caveman-compress caveman-help caveman-review \
   --full-depth \
   --yes
 skills add vercel-labs/skills \
