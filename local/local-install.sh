@@ -36,6 +36,29 @@ nvm alias default 'lts/*'
 echo "Installing GitHub Copilot CLI and skills CLI"
 npm install --global @github/copilot skills
 
+echo "Installing GitHub Copilot CLI plugins"
+if ! copilot plugin marketplace list | grep -q "ponytail"; then
+  copilot plugin marketplace add DietrichGebert/ponytail
+fi
+if ! copilot plugin marketplace list | grep -q "agent-config"; then
+  copilot plugin marketplace add github/agent-config
+fi
+
+for plugin in \
+  github/auto-agentics \
+  JuliusBrussee/caveman \
+  ponytail@ponytail \
+  port@agent-config
+do
+  plugin_name=${plugin%%@*}
+  plugin_name=${plugin_name##*/}
+  if copilot plugin list | grep -Eq "^[[:space:]]+[^[:alnum:]]+[[:space:]]+$plugin_name([@[:space:]]|$)"; then
+    echo "$plugin_name Copilot plugin already installed, skipping"
+  else
+    copilot plugin install "$plugin"
+  fi
+done
+
 echo "Installing zsh-syntax-highlighting..."
 brew install zsh-syntax-highlighting
 
