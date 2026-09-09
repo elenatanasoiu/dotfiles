@@ -175,7 +175,7 @@ brew install --cask stretchly
 
 echo "Setting screenshot location to ~/Screenshots"
 mkdir -p ~/Screenshots
-defaults write com.apple.screencapture location "~/Screenshots"
+defaults write com.apple.screencapture location "$HOME/Screenshots"
 
 echo "Reloading zsh"
 source ~/.zshrc
