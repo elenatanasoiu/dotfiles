@@ -11,6 +11,11 @@ echo "Installing homebrew"
 echo "Installing GitHub CLI"
 brew install gh
 
+if ! gh auth status >/dev/null 2>&1; then
+  echo "Authenticating GitHub CLI"
+  gh auth login
+fi
+
 echo "Installing GitHub CLI extensions"
 for extension in \
   github/gh-ci \
@@ -21,7 +26,9 @@ for extension in \
   rneatherway/gh-slack \
   github/gh-stack
 do
-  gh extension install "$extension" --force
+  if ! gh extension install "$extension" --force; then
+    echo "Warning: failed to install $extension, continuing" >&2
+  fi
 done
 
 echo "Installing NVM"
