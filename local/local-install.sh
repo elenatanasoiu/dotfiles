@@ -106,7 +106,9 @@ echo "Install shellcheck"
 brew install shellcheck
 
 echo "Installing oh-my-zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [ ! -f "$HOME/.oh-my-zsh/oh-my-zsh.sh" ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
 
 echo "Linking dotfiles into ~..."
 cd ~
