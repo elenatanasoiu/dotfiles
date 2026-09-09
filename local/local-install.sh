@@ -124,7 +124,6 @@ brew install zsh-syntax-highlighting
 echo "Installing tmux and tmuxinator"
 brew install tmux
 brew install tmuxinator
-tmuxinator doctor
 
 echo "Install shellcheck"
 brew install shellcheck
