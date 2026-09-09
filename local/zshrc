@@ -60,6 +60,13 @@ export PATH="$HOME/.serverless/bin:$PATH"
 
 # Reload
 source $ZSH/oh-my-zsh.sh
+
+if [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
 export JETBRAINS_LICENSE_SERVER=https://github.jetbrains-ide-services.com
 
 # Auto-update codespace SSH config (fully backgrounded to avoid blocking shell startup)
