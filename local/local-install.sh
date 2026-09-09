@@ -24,6 +24,18 @@ do
   gh extension install "$extension" --force
 done
 
+echo "Installing NVM"
+export NVM_DIR="$HOME/.nvm"
+PROFILE=/dev/null /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.7/install.sh)"
+. "$NVM_DIR/nvm.sh"
+
+echo "Installing Node.js and npm"
+nvm install --lts
+nvm alias default 'lts/*'
+
+echo "Installing GitHub Copilot CLI and skills CLI"
+npm install --global @github/copilot skills
+
 echo "Installing zsh-syntax-highlighting..."
 brew install zsh-syntax-highlighting
 
