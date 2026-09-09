@@ -196,7 +196,13 @@ echo "Setting screenshot location to ~/Screenshots"
 mkdir -p ~/Screenshots
 defaults write com.apple.screencapture location "$HOME/Screenshots"
 
-echo "Reloading zsh"
-source ~/.zshrc
-
 echo "Done!"
+
+if [ "${TERM_PROGRAM:-}" = "iTerm.app" ]; then
+  echo "Opening a new iTerm tab"
+  if ! osascript -e 'tell application "iTerm2" to tell current window to create tab with default profile'; then
+    echo "Open a new terminal tab to load the updated shell configuration" >&2
+  fi
+else
+  echo "Open a new terminal tab to load the updated shell configuration"
+fi
