@@ -61,10 +61,13 @@ fi
 if ! copilot plugin marketplace list | grep -q "agent-config"; then
   copilot plugin marketplace add github/agent-config
 fi
+if ! copilot plugin marketplace list | grep -q "caveman"; then
+  copilot plugin marketplace add JuliusBrussee/caveman
+fi
 
 for plugin in \
   github/auto-agentics \
-  JuliusBrussee/caveman \
+  caveman@caveman \
   ponytail@ponytail \
   port@agent-config
 do
