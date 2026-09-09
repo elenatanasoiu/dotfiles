@@ -160,7 +160,7 @@ brew install cowsay
 
 echo "Install fuzzy finder"
 brew install fzf
-"$(brew --prefix)/opt/fzf/install"
+"$(brew --prefix)/opt/fzf/install" --all --no-update-rc
 echo "Install ripgrep to use with fzf"
 brew install ripgrep
 
