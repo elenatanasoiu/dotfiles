@@ -8,6 +8,22 @@ DOTFILES_ROOT=$(cd -- "$(dirname "$0")/.." && pwd)
 echo "Installing homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+echo "Installing GitHub CLI"
+brew install gh
+
+echo "Installing GitHub CLI extensions"
+for extension in \
+  github/gh-ci \
+  github/gh-hubber-skills \
+  github/gh-kustomize \
+  github/gh-models \
+  github/gh-shell \
+  rneatherway/gh-slack \
+  github/gh-stack
+do
+  gh extension install "$extension" --force
+done
+
 echo "Installing zsh-syntax-highlighting..."
 brew install zsh-syntax-highlighting
 
