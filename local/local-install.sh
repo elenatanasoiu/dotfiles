@@ -187,7 +187,7 @@ echo "Install ripgrep to use with fzf"
 brew install ripgrep
 
 echo "Install serverless for squiddy"
-npm install --global serverless@3.38.0
+npm install --global serverless@4.41.1
 
 echo "Install asciinema"
 brew install asciinema
