@@ -27,7 +27,7 @@ to manage installing and removing plugins.
 
 For local development:
 
-    $ ./local-install.sh
+    $ ./local/local-install.sh
     
 For codespaces:
 
