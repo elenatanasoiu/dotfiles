@@ -5,6 +5,9 @@ set -e
 # The full path to the directory containing this script
 DOTFILES_ROOT=$(cd -- "$(dirname "$0")/.." && pwd)
 
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_ASK=1
+
 echo "Installing homebrew"
 if ! command -v brew >/dev/null 2>&1; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
