@@ -167,6 +167,9 @@ fi
 echo "Install vim plugins"
 vim +PluginInstall +qall
 
+echo "Installing GnuPG"
+brew install gnupg
+
 echo "Turn on GPG signing of commits"
 git config --global commit.gpgsign true
 
