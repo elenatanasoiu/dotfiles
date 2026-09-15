@@ -51,8 +51,11 @@ python3() { unset -f pyenv python python3; eval "$(command pyenv init -)"; pytho
 # Added by serverless binary installer
 export PATH="$HOME/.serverless/bin:$PATH"
 
-# Sync with vars set in .zshenv
-. ~/.zshenv
+# Sync with vars set in .zshenv when present
+[ -f ~/.zshenv ] && source ~/.zshenv
+
+# GPG: tell gpg-agent which terminal to prompt on for the signing passphrase
+export GPG_TTY=$(tty)
 
 # Start the ssh agent
 [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"

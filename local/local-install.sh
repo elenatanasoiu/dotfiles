@@ -170,6 +170,12 @@ vim +PluginInstall +qall
 echo "Installing GnuPG"
 brew install gnupg
 
+echo "Installing pinentry-mac so the signing passphrase is cached in the macOS Keychain"
+brew install pinentry-mac
+mkdir -p ~/.gnupg && chmod 700 ~/.gnupg
+ln -sfn $DOTFILES_ROOT/gnupg/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+gpgconf --kill gpg-agent 2>/dev/null || true
+
 echo "Turn on GPG signing of commits"
 git config --global commit.gpgsign true
 
