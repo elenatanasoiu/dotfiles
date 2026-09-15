@@ -201,6 +201,9 @@ echo "Setting screenshot location to ~/Screenshots"
 mkdir -p ~/Screenshots
 defaults write com.apple.screencapture location "$HOME/Screenshots"
 
+echo "Install ruby-install and chruby"
+brew install ruby-install chruby
+
 echo "Done!"
 
 if [ "${TERM_PROGRAM:-}" = "iTerm.app" ]; then
