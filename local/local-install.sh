@@ -139,6 +139,8 @@ rm -f ~/.vimrc
 ln -s $DOTFILES_ROOT/vim/vimrc ~/.vimrc
 rm -f ~/.zshrc
 ln -s $DOTFILES_ROOT/local/zshrc ~/.zshrc
+rm -f ~/.gitconfig
+ln -s $DOTFILES_ROOT/.gitconfig ~/.gitconfig
 mkdir -p ~/.zsh
 for fragment in aliases history homebrew plugins tmux tmuxinator
 do
