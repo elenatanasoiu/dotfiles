@@ -14,9 +14,8 @@ ZSH_THEME="robbyrussell"
 test -f ~/.oh-my-zsh/custom/themes/elena.zsh-theme && ZSH_THEME="elena"
 
 # Chruby (hardcoded brew prefix — saves ~160ms vs `brew --prefix`)
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.3.0
+[ -f /opt/homebrew/opt/chruby/share/chruby/chruby.sh ] && source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+[ -f /opt/homebrew/opt/chruby/share/chruby/auto.sh ] && source /opt/homebrew/opt/chruby/share/chruby/auto.sh
 
 # Yarn (cached path — run `yarn global bin` to verify if yarn moves)
 export PATH="$PATH:$HOME/.yarn/bin"
