@@ -2,6 +2,12 @@
 export VISUAL='vim'
 export EDITOR=$VISUAL
 
+# VS Code/agent terminals inject GIT_EDITOR=: (a no-op) to keep git non-interactive.
+# In an interactive shell, drop it so amends/rebases open a real editor (EDITOR/VISUAL).
+if [[ -o interactive && "$GIT_EDITOR" == ":" ]]; then
+  unset GIT_EDITOR
+fi
+
 # Path to my oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
